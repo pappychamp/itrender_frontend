@@ -1,0 +1,17 @@
+.site-text-container {
+  margin: 0.75rem !important;
+  max-width: 80% !important;
+  padding: 0% !important;
+
+  @media (max-width: 550px) {
+    padding: 0% !important;
+    max-width: 100% !important;
+  }
+}
+.site-text {
+  font-size: 4rem !important;
+  font-weight: bolder !important;
+  @media (max-width: 550px) {
+    font-size: 2rem !important;
+  }
+}
