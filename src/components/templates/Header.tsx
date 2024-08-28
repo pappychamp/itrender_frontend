@@ -3,16 +3,19 @@ import classes from '../../styles/Header.module.css';
 import CustomTabs from '../atoms/CustomTabs';
 // import BurgerDrawer from '../molecules/BurgerDrawer';
 
-const tabs = ['Home', 'Trend'];
+const tabs = [
+  { name: 'Home', path: '/' },
+  { name: 'Trend', path: '/trend' },
+];
 
-const HeaderTabs = () => {
+const Header = () => {
   return (
     <header className={classes.header}>
       <Group>
         {/* <BurgerDrawer /> */}
-        <CustomTabs defaultValue="Home" tabs={tabs} />
+        <CustomTabs tabs={tabs} />
       </Group>
     </header>
   );
 };
-export default HeaderTabs;
+export default Header;

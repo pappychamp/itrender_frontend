@@ -4,31 +4,25 @@ import CustomBadge from '../atoms/CustomBadge';
 import classes from '../../styles/home/CardContent.module.css';
 import qiitaImage from '../../assets/qiita.png';
 import zennImage from '../../assets/zenn.png';
+import { SiteItem } from '../../types/trendApi';
 
-type item = {
-  sitename: string;
-  title: string;
-  link: string;
-  tags: string[];
-  ranking: string;
-};
 type props = {
-  item: item;
+  data: SiteItem;
 };
 
-const CardContent = ({ item }: props) => {
-  const { sitename, link, title, tags, ranking } = item;
+const CardContent = ({ data }: props) => {
+  const { title, ranking, tags, url, site } = data;
   let srcImage;
-  if (sitename === 'qiita') {
+  if (site.name === 'qiita') {
     srcImage = qiitaImage;
-  } else if (sitename === 'zenn') {
+  } else if (site.name === 'zenn') {
     srcImage = zennImage;
   }
   return (
-    <a href={link} style={{ textDecoration: 'none' }}>
+    <a href={url ?? '#'} style={{ textDecoration: 'none' }}>
       <Card shadow="sm" radius="md" withBorder className={classes.card}>
         <Container className={`${classes['avatar-container']}`}>
-          <CustomAvatar name={ranking} />
+          <CustomAvatar name={String(ranking) ?? '0'} />
         </Container>
         <Container className={`${classes['content-container']}`}>
           <Image src={srcImage} className={`${classes['content-image']}`} />
@@ -41,7 +35,7 @@ const CardContent = ({ item }: props) => {
         <Container className={`${classes['badge-container']}`}>
           <Group className={`${classes['badge-group']}`}>
             {tags.map((tag, index) => {
-              return <CustomBadge name={tag} key={index} />;
+              return <CustomBadge name={tag.name} key={index} />;
             })}
           </Group>
         </Container>

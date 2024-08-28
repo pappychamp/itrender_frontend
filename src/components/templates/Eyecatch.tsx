@@ -5,7 +5,9 @@ const Eyecatch = () => {
   return (
     <>
       <Container className={`${classes['title-container']}`}>
-        <Text className={`${classes['title-text']}`}>今のトレンドが分かる</Text>
+        <Text className={`${classes['title-text']}`}>
+          今日のトレンドが分かる
+        </Text>
         <Text className={`${classes['title-text']}`}>
           トレンドまとめサービス
         </Text>

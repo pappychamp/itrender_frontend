@@ -1,9 +1,10 @@
-import Home from './components/pages/Home.tsx';
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes from './routes/Routes.tsx';
 const App = () => {
   return (
-    <div>
-      <Home />
-    </div>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
 };
 
