@@ -4,7 +4,6 @@
   /* --container-size: 100% !important; */
   background-color: #5647f5;
   display: flex;
-  margin-bottom: 50px;
   @media (max-width: 550px) {
     padding: 1rem !important;
     margin-bottom: 0px;

@@ -5,11 +5,23 @@
   border-bottom: 1px solid
     light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
 
-  position: fixed;
+  position: sticky;
   height: 75px;
   width: 100%;
-  z-index: 1000;
+  top: 0;
+  z-index: 1;
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   /* padding: 10px 20px;  */
 }
+.anchor {
+  color: rgb(68, 68, 68) !important;
+}
+.anchor:hover {
+  color: rgb(0, 0, 0) !important;
+  font-weight: bold;
+}
+/* .anchor[data-active] {
+  color: rgb(0, 0, 0) !important;
+  font-weight: bold;
+} */

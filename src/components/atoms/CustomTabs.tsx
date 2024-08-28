@@ -1,21 +1,40 @@
-import { Tabs } from '@mantine/core';
+import { Anchor } from '@mantine/core';
+import { useNavigate } from 'react-router-dom';
+import classes from '../../styles/Header.module.css';
+import { useState } from 'react';
+
+type tabs = {
+  name: string;
+  path: string;
+};
 
 type props = {
-  defaultValue: string;
-  tabs: string[];
+  tabs: tabs[];
 };
 
 const CustomTabs = (props: props) => {
-  const { defaultValue, tabs } = props;
-  const items = tabs.map((tab) => (
-    <Tabs.Tab value={tab} key={tab} p={20} fz={20}>
-      {tab}
-    </Tabs.Tab>
-  ));
+  const { tabs } = props;
+  const navigate = useNavigate();
+  const [active, setActive] = useState(0);
   return (
-    <Tabs defaultValue={defaultValue}>
-      <Tabs.List>{items}</Tabs.List>
-    </Tabs>
+    <>
+      {tabs.map((tab, index) => (
+        <Anchor
+          key={tab.name}
+          p={20}
+          fz={20}
+          underline="never"
+          data-active={index === active || undefined}
+          onClick={() => {
+            setActive(index);
+            navigate(tab.path);
+          }}
+          className={`${classes['anchor']}`}
+        >
+          {tab.name}
+        </Anchor>
+      ))}
+    </>
   );
 };
 

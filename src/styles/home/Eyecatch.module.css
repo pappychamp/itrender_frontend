@@ -1,7 +1,6 @@
 .image-container {
   /* width: 25%; */
   max-width: 100%;
-  margin-top: 75px;
   @media (max-width: 550px) {
     display: none;
   }
@@ -20,9 +19,6 @@
   align-items: center;
   justify-content: center;
   flex-grow: 2;
-  @media (max-width: 550px) {
-    margin-top: 75px;
-  }
 }
 .title {
   color: #ffffff;

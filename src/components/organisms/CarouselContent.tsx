@@ -2,22 +2,10 @@ import { Carousel } from '@mantine/carousel';
 import CardContent from '../molecules/CardContent.tsx';
 import classes from '../../styles/home/CarouselContent.module.css';
 import { useState, useEffect } from 'react';
+import { SiteItem } from '../../types/trendApi.ts';
 
-type item = {
-  sitename: string;
-  title: string;
-  link: string;
-  tags: string[];
-  ranking: string;
-  embed_html: string;
-};
-
-type example = {
-  site: string;
-  contents: item[];
-};
 type props = {
-  data: example;
+  data: SiteItem[];
 };
 
 const CarouselContent = ({ data }: props) => {
@@ -59,13 +47,13 @@ const CarouselContent = ({ data }: props) => {
           container: `${classes['carousel-container']}`, // カスタムクラスを適用
         }}
       >
-        {data.contents.map((item, index) => {
+        {data.slice(0, 10).map((item, index) => {
           return (
             <Carousel.Slide
               key={index}
               className={`${classes['carousel-slide']}`}
             >
-              <CardContent item={item} />
+              <CardContent data={item} />
             </Carousel.Slide>
           );
         })}
