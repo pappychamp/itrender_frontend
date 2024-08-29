@@ -1,32 +1,33 @@
 import { Select } from '@mantine/core';
+import { SiteFormOption } from '../../types/trendform';
 import { useTrend } from '../../context/TrendContext';
-
 type props = {
-  date: string[];
-  defaultValue: string;
+  site: SiteFormOption[];
 };
-const DateForm = ({ date, defaultValue }: props) => {
+
+const SiteForm = ({ site }: props) => {
   const { state, dispatch } = useTrend();
+
   const handleSelectChange = (value: string | null) => {
     if (value) {
-      dispatch({ type: 'SET_DATE', payload: value });
+      dispatch({ type: 'SET_SITE', payload: value });
     } else {
       // null の場合の処理をここに追加する
-      dispatch({ type: 'SET_DATE', payload: '' });
+      dispatch({ type: 'SET_SITE', payload: '' });
     }
   };
   return (
     <>
       <Select
-        label="日付"
+        label="サイト"
         placeholder="Pick value"
-        data={date}
+        data={site}
         size="md"
-        value={state.date}
+        value={state.site}
         onChange={handleSelectChange}
       />
     </>
   );
 };
 
-export default DateForm;
+export default SiteForm;

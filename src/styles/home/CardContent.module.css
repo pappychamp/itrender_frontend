@@ -19,7 +19,7 @@
   }
 }
 .content-container {
-  height: 50%;
+  height: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,12 +32,12 @@
   padding: 20%;
 }
 .title-container {
-  height: 30%;
+  height: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   @media (max-width: 550px) {
-    height: 50%;
+    height: 70%;
   }
 }
 .title-text {
@@ -57,7 +57,7 @@
     font-size: 16px !important;
   }
 }
-.badge-container {
+/* .badge-container {
   height: 20%;
   display: flex;
   align-items: center;
@@ -72,7 +72,7 @@
   overflow: hidden !important;
   text-overflow: ellipsis !important;
   display: -webkit-box !important;
-  -webkit-line-clamp: 3; /* 最大行数を指定 */
+  -webkit-line-clamp: 3; 
   -webkit-box-orient: vertical !important;
   max-height: 100% !important;
-}
+} */
