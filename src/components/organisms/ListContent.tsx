@@ -18,7 +18,12 @@ const ListContent = ({ data }: props) => {
       {data.slice(0, 10).map((item, index) => {
         return (
           <List.Item key={index} className={`${classes['list-item']}`}>
-            <a href={item.url ?? '#'} className={`${classes['a']}`}>
+            <a
+              href={item.url ?? '#'}
+              className={`${classes['a']}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {item.title}
             </a>
           </List.Item>

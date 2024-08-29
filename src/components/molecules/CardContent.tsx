@@ -1,6 +1,5 @@
-import { Card, Text, Container, Group, Image } from '@mantine/core';
+import { Card, Text, Container, Image } from '@mantine/core';
 import CustomAvatar from '../atoms/CustomAvatar';
-import CustomBadge from '../atoms/CustomBadge';
 import classes from '../../styles/home/CardContent.module.css';
 import qiitaImage from '../../assets/qiita.png';
 import zennImage from '../../assets/zenn.png';
@@ -11,7 +10,7 @@ type props = {
 };
 
 const CardContent = ({ data }: props) => {
-  const { title, ranking, tags, url, site } = data;
+  const { title, ranking, url, site } = data;
   let srcImage;
   if (site.name === 'qiita') {
     srcImage = qiitaImage;
@@ -19,7 +18,12 @@ const CardContent = ({ data }: props) => {
     srcImage = zennImage;
   }
   return (
-    <a href={url ?? '#'} style={{ textDecoration: 'none' }}>
+    <a
+      href={url ?? '#'}
+      style={{ textDecoration: 'none' }}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <Card shadow="sm" radius="md" withBorder className={classes.card}>
         <Container className={`${classes['avatar-container']}`}>
           <CustomAvatar name={String(ranking) ?? '0'} />
@@ -32,13 +36,13 @@ const CardContent = ({ data }: props) => {
             {title}
           </Text>
         </Container>
-        <Container className={`${classes['badge-container']}`}>
+        {/* <Container className={`${classes['badge-container']}`}>
           <Group className={`${classes['badge-group']}`}>
             {tags.map((tag, index) => {
-              return <CustomBadge name={tag.name} key={index} />;
+              return <CustomBadge name={tag.name} key={index} size="md" />;
             })}
           </Group>
-        </Container>
+        </Container> */}
       </Card>
     </a>
   );

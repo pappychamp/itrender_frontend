@@ -3,7 +3,7 @@
   color: #555555 !important;
   text-transform: none !important; /* テキストを変換しない */
   margin: 2px;
-  font-size: medium !important;
+  font-size: small !important;
   display: inline-block;
   max-width: 200px; /* 最大幅を設定 */
   overflow: hidden;

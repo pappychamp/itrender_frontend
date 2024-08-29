@@ -1,28 +1,37 @@
 import { Table } from '@mantine/core';
+import { SiteItem } from '../../types/trendApi';
+import CustomBadge from '../atoms/CustomBadge';
 
-const elements = [
-  { position: 6, symbol: 'C', name: 'Carbon' },
-  { position: 7, symbol: 'N', name: 'Nitrogen' },
-  { position: 39, symbol: 'Y', name: 'Yttrium' },
-  { position: 56, symbol: 'Ba', name: 'Barium' },
-  { position: 58, symbol: 'Ce', name: 'Cerium' },
-];
-
-const TrendContents = () => {
-  const rows = elements.map((element) => (
-    <Table.Tr key={element.name}>
-      <Table.Td>{element.position}</Table.Td>
-      <Table.Td>{element.name}</Table.Td>
-      <Table.Td>{element.symbol}</Table.Td>
+type props = {
+  items: SiteItem[];
+};
+const TrendContents = ({ items }: props) => {
+  const rows = items.map((item) => (
+    <Table.Tr key={item.ranking}>
+      <Table.Td>{item.ranking}</Table.Td>
+      <Table.Td>
+        {item.url ? (
+          <a href={item.url} target="_blank" rel="noopener noreferrer">
+            {item.title}
+          </a>
+        ) : (
+          <>{item.title}</>
+        )}
+      </Table.Td>
+      <Table.Td>
+        {item.tags.map((tag, index) => {
+          return <CustomBadge name={tag.name} key={index} size="xs" />;
+        })}
+      </Table.Td>
     </Table.Tr>
   ));
   return (
-    <Table stickyHeader stickyHeaderOffset={60}>
+    <Table stickyHeaderOffset={60}>
       <Table.Thead>
         <Table.Tr>
-          <Table.Th style={{ width: '10%' }}>ランキング</Table.Th>
-          <Table.Th style={{ width: '45%' }}>タイトル</Table.Th>
-          <Table.Th style={{ width: '45%' }}>タグ</Table.Th>
+          <Table.Th style={{ width: '10%' }}></Table.Th>
+          <Table.Th style={{ width: '60%' }}>タイトル</Table.Th>
+          <Table.Th style={{ width: '30%' }}>タグ</Table.Th>
         </Table.Tr>
       </Table.Thead>
       <Table.Tbody>{rows}</Table.Tbody>

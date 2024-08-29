@@ -1,2 +1,2 @@
-type SiteForm = 'Qiita' | 'Youtube' | 'Zenn' | 'Yahoo';
-export type { SiteForm };
+type SiteFormOption = 'Qiita' | 'Youtube' | 'Zenn' | 'Yahoo';
+export type { SiteFormOption };

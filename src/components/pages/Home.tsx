@@ -5,7 +5,7 @@ import HomeContents from '../templates/HomeContents.tsx';
 import Eyecatch from '../templates/Eyecatch.tsx';
 import Footer from '../templates/Footer.tsx';
 import { useEffect, useState } from 'react';
-import { getTrendData } from '../../api/dataFetcher.ts';
+import { getALLTrendData } from '../../api/dataFetcher.ts';
 import { SiteData } from '../../types/trendApi.ts';
 import { currentDate } from '../../utils/dateFormatter.ts';
 import { trendDataFormat } from '../../utils/dataFormatter.ts';
@@ -16,9 +16,8 @@ const Home = () => {
   useEffect(() => {
     const fetchTrendData = async () => {
       try {
-        const site = 'all';
         const date = currentDate();
-        const trendData = await getTrendData(site, date);
+        const trendData = await getALLTrendData(date);
         const formattedData = trendDataFormat(trendData);
         setTrend(formattedData);
       } catch (error) {

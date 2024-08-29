@@ -1,6 +1,6 @@
 import { Container } from '@mantine/core';
 import DateForm from '../organisms/DateForm';
-import TrendForm from '../organisms/TrendForm';
+import SiteForm from '../organisms/SiteForm';
 import classes from '../../styles/trend/TrendSearchForm.module.css';
 import { useEffect, useState } from 'react';
 import { getPastDates } from '../../utils/dateFormatter';
@@ -19,7 +19,7 @@ const TrendSearchForm = () => {
     <>
       <Container className={`${classes['main-section']}`}>
         <Container className={`${classes['form-section']}`}>
-          <TrendForm site={siteOptions} />
+          <SiteForm site={siteOptions} />
         </Container>
         <Container className={`${classes['form-section']}`}>
           {date && <DateForm date={date} defaultValue={defaultDateOption} />}
