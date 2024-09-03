@@ -1,4 +1,4 @@
-import { SiteKey } from '../types/trendApi';
+import { SiteKey } from '../../types/trendApi';
 const replaceText = (text: SiteKey): string => {
   // 変換ルールを定義
   const replacements = {
