@@ -5,30 +5,20 @@ import Footer from '../templates/Footer.tsx';
 import TrendSearchForm from '../templates/TrendSearchForm.tsx';
 import TrendContents from '../templates/TrendContents.tsx';
 import { useTrend } from '../../context/TrendContext.tsx';
-import { getSiteTrendData } from '../../api/dataFetcher.ts';
 import { useEffect, useState } from 'react';
+import fetchSiteTrendData from '../../utils/api/fetchSiteTrendData.ts';
+import { SiteItem } from '../../types/trendApi.ts';
 
 const Trend = () => {
   const { state } = useTrend();
-  const [trendData, setTrendData] = useState([]);
+  const [trendData, setTrendData] = useState<SiteItem[]>([]);
   useEffect(() => {
     // stateのdateとsiteのvalueがどちらかでも空の場合は何もしない
     if (!state.date || !state.site) {
       return;
       // それ以外はgetSiteTrendData処理
     }
-    const fetchSiteTrendData = async () => {
-      try {
-        const siteTrendData = await getSiteTrendData(
-          state.site.toLowerCase(),
-          state.date,
-        );
-        setTrendData(siteTrendData);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchSiteTrendData();
+    fetchSiteTrendData(state.site, state.date, setTrendData);
   }, [state]);
 
   return (
