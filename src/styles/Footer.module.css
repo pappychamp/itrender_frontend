@@ -1,5 +1,5 @@
 .footer {
-  background-color: #5647f5;
+  background-color: #000000;
   border-top: rem(1px) solid
     light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));
 }
@@ -25,4 +25,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #ffffff;
 }
