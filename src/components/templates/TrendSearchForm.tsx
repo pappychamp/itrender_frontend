@@ -3,8 +3,8 @@ import DateForm from '../organisms/DateForm';
 import SiteForm from '../organisms/SiteForm';
 import classes from '../../styles/trend/TrendSearchForm.module.css';
 import { useEffect, useState } from 'react';
-import { getPastDates } from '../../utils/dateFormatter';
-import { siteOptions } from '../../utils/selectOptions';
+import { getPastDates } from '../../utils/date/dateFormatter';
+import { siteOptions } from '../../constants/selectOptions';
 
 const TrendSearchForm = () => {
   const [date, setDate] = useState<string[] | null>(null);

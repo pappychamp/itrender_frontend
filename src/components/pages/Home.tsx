@@ -7,8 +7,8 @@ import Footer from '../templates/Footer.tsx';
 import { useEffect, useState } from 'react';
 import { getALLTrendData } from '../../api/dataFetcher.ts';
 import { SiteData } from '../../types/trendApi.ts';
-import { currentDate } from '../../utils/dateFormatter.ts';
-import { trendDataFormat } from '../../utils/dataFormatter.ts';
+import { currentDate } from '../../utils/date/dateFormatter.ts';
+import { trendDataFormat } from '../../utils/format/dataFormatter.ts';
 
 const Home = () => {
   const [trend, setTrend] = useState<SiteData | null>(null);
