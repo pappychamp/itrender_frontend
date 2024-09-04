@@ -17,7 +17,7 @@ const TrendSearchForm = () => {
     <>
       <Container className={`${classes['main-section']}`}>
         <Container className={`${classes['form-section']}`}>
-          <SiteForm site={siteOptions} />
+          <SiteForm siteOptions={siteOptions} />
         </Container>
         <Container className={`${classes['form-section']}`}>
           {date && <DateForm date={date} />}
