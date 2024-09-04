@@ -8,11 +8,9 @@ import { siteOptions } from '../../constants/selectOptions';
 
 const TrendSearchForm = () => {
   const [date, setDate] = useState<string[] | null>(null);
-  const [defaultDateOption, setDefaultDateOption] = useState('');
   useEffect(() => {
     const getDate = getPastDates(5);
     setDate(getDate);
-    setDefaultDateOption(getDate[0]);
   }, []);
 
   return (
@@ -22,7 +20,7 @@ const TrendSearchForm = () => {
           <SiteForm site={siteOptions} />
         </Container>
         <Container className={`${classes['form-section']}`}>
-          {date && <DateForm date={date} defaultValue={defaultDateOption} />}
+          {date && <DateForm date={date} />}
         </Container>
       </Container>
     </>
