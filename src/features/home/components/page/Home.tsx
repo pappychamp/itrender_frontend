@@ -1,13 +1,13 @@
-import Header from '../templates/Header.tsx';
+import Header from '../../../../components/layout/Header.tsx';
 import { Container } from '@mantine/core';
-import classes from '../../styles/home/Home.module.css';
-import HomeContents from '../templates/HomeContents.tsx';
-import Eyecatch from '../templates/Eyecatch.tsx';
-import Footer from '../templates/Footer.tsx';
+import HomeContents from '../HomeContents.tsx';
+import Eyecatch from '../Eyecatch.tsx';
+import Footer from '../../../../components/layout/Footer.tsx';
 import { useEffect, useState } from 'react';
-import { SiteData } from '../../types/trendApi.ts';
-import { currentDate } from '../../utils/date/dateFormatter.ts';
-import fetchAllTrendData from '../../utils/api/fetchAllTrendData.ts';
+import { SiteData } from '../../../../types/trendApi.ts';
+import { currentDate } from '../../../../utils/date/dateFormatter.ts';
+import fetchAllTrendData from '../../api/fetchAllTrendData.ts';
+import classes from '../../styles/Home.module.css';
 
 const Home = () => {
   const [trend, setTrend] = useState<SiteData | null>(null);

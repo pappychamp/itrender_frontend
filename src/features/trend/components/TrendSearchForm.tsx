@@ -1,10 +1,10 @@
 import { Container } from '@mantine/core';
-import DateForm from '../organisms/DateForm';
-import SiteForm from '../organisms/SiteForm';
-import classes from '../../styles/trend/TrendSearchForm.module.css';
+import DateForm from '../../../components/organisms/DateForm';
+import SiteForm from '../../../components/organisms/SiteForm';
+import classes from '../styles/TrendSearchForm.module.css';
 import { useEffect, useState } from 'react';
-import { getPastDates } from '../../utils/date/dateFormatter';
-import { siteOptions } from '../../constants/selectOptions';
+import { getPastDates } from '../../../utils/date/dateFormatter';
+import { siteOptions } from '../../../constants/selectOptions';
 
 const TrendSearchForm = () => {
   const [date, setDate] = useState<string[] | null>(null);

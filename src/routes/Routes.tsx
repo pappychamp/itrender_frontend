@@ -1,5 +1,5 @@
-import Home from '../components/pages/Home.tsx';
-import Trend from '../components/pages/Trend.tsx';
+import Home from '../features/home/components/page/Home.tsx';
+import Trend from '../features/trend/components/page/Trend.tsx';
 import { Route, Routes } from 'react-router-dom';
 const AppRoutes = () => {
   return (

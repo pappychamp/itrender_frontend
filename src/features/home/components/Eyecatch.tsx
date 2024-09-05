@@ -1,6 +1,7 @@
 import { Container, Image, Title, Text } from '@mantine/core';
-import imagesrc from '../../assets/desktop.png';
-import classes from '../../styles/home/Eyecatch.module.css';
+import imagesrc from '../../../assets/desktop.png';
+import classes from '../styles/Eyecatch.module.css';
+
 const Eyecatch = () => {
   return (
     <>

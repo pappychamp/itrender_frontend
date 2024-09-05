@@ -1,13 +1,13 @@
-import Header from '../templates/Header.tsx';
+import Header from '../../../../components/layout/Header.tsx';
+import Footer from '../../../../components/layout/Footer.tsx';
 import { Container } from '@mantine/core';
-import classes from '../../styles/trend/Trend.module.css';
-import Footer from '../templates/Footer.tsx';
-import TrendSearchForm from '../templates/TrendSearchForm.tsx';
-import TrendContents from '../templates/TrendContents.tsx';
+import TrendSearchForm from '../TrendSearchForm.tsx';
+import TrendContents from '../TrendContents.tsx';
 import { useTrend } from '../../context/TrendContext.tsx';
 import { useEffect, useState } from 'react';
-import fetchSiteTrendData from '../../utils/api/fetchSiteTrendData.ts';
-import { SiteItem } from '../../types/trendApi.ts';
+import fetchSiteTrendData from '../../api/fetchSiteTrendData.ts';
+import { SiteItem } from '../../../../types/trendApi.ts';
+import classes from '../../styles/Trend.module.css';
 
 const Trend = () => {
   const { state } = useTrend();

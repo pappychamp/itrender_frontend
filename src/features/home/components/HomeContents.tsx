@@ -1,10 +1,10 @@
-import classes from '../../styles/home/Contents.module.css';
+import classes from '../styles/Contents.module.css';
 import { Container, Text } from '@mantine/core';
-import CarouselContent from '../organisms/CarouselContent.tsx';
-import YoutubeContent from '../organisms/YoutubeContent.tsx';
-import ListContent from '../organisms/ListContent.tsx';
-import replaceText from '../../utils/format/replaceText.ts';
-import { SiteData, SiteItem, SiteKey } from '../../types/trendApi.ts';
+import CarouselContent from '../../../components/organisms/CarouselContent.tsx';
+import YoutubeContent from '../../../components/organisms/YoutubeContent.tsx';
+import ListContent from '../../../components/organisms/ListContent.tsx';
+import replaceText from '../../../utils/format/replaceText.ts';
+import { SiteData, SiteItem, SiteKey } from '../../../types/trendApi.ts';
 
 type props = {
   data: SiteData;

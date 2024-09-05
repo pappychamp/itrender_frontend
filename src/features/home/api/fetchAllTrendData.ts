@@ -1,6 +1,6 @@
-import { getALLTrendData } from '../../api/dataFetcher';
-import { SiteData } from '../../types/trendApi';
-import { trendDataFormat } from '../format/dataFormatter';
+import { getALLTrendData } from '../../../api/dataFetcher';
+import { SiteData } from '../../../types/trendApi';
+import { trendDataFormat } from '../../../utils/format/dataFormatter';
 
 type SetTrend = (value: SiteData | null) => void;
 
