@@ -1,15 +1,15 @@
 import { getSiteTrendData } from '../../../api/dataFetcher';
-import { SiteItem } from '../../../types/trendApi';
+import { SiteItem, SiteKey } from '../../../types/trendApi';
 
 type SetTrendData = (value: SiteItem[]) => void;
 
 const fetchSiteTrendData = async (
-  site: string,
+  site: SiteKey,
   date: string,
   setTrendData: SetTrendData,
 ) => {
   try {
-    const siteTrendData = await getSiteTrendData(site.toLowerCase(), date);
+    const siteTrendData = await getSiteTrendData(site, date);
     setTrendData(siteTrendData);
   } catch (error) {
     console.log(error);

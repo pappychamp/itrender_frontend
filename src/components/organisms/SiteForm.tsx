@@ -1,16 +1,23 @@
 import { Select } from '@mantine/core';
 import { SiteFormOption } from '../../types/trendform';
 import { useTrend } from '../../features/trend/context/TrendContext';
+import { SiteKey } from '../../types/trendApi';
+
+type SiteOptions = {
+  value: SiteKey;
+  label: SiteFormOption;
+};
 type props = {
-  site: SiteFormOption[];
+  siteOptions: SiteOptions[];
 };
 
-const SiteForm = ({ site }: props) => {
+const SiteForm = ({ siteOptions }: props) => {
   const { state, dispatch } = useTrend();
 
-  const handleSelectChange = (value: string | null) => {
-    if (value) {
-      dispatch({ type: 'SET_SITE', payload: value });
+  const handleSelectChange = (_value: string | null) => {
+    if (_value) {
+      const payloadValue = _value as SiteKey;
+      dispatch({ type: 'SET_SITE', payload: payloadValue });
     } else {
       // null の場合の処理をここに追加する
       dispatch({ type: 'SET_SITE', payload: '' });
@@ -21,9 +28,9 @@ const SiteForm = ({ site }: props) => {
       <Select
         label="サイト"
         placeholder="Pick value"
-        data={site}
+        data={siteOptions}
         size="md"
-        value={state.site}
+        value={state.site ? state.site : null}
         onChange={handleSelectChange}
       />
     </>

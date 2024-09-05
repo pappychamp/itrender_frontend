@@ -15,6 +15,7 @@ const Trend = () => {
   useEffect(() => {
     // stateのdateとsiteのvalueがどちらかでも空の場合は何もしない
     if (!state.date || !state.site) {
+      setTrendData([]);
       return;
       // それ以外はgetSiteTrendData処理
     }
