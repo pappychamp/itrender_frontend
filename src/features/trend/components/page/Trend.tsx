@@ -17,7 +17,7 @@ const Trend = () => {
         <TrendSearchForm />
       </Container>
       <Container className={`${classes['contents-section']}`}>
-        {trendData && <TrendContents items={trendData} />}
+        <TrendContents items={trendData} loading={loading} error={error} />
       </Container>
     </>
   );
