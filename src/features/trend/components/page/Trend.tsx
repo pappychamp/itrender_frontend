@@ -1,5 +1,3 @@
-import Header from '../../../../components/layout/Header.tsx';
-import Footer from '../../../../components/layout/Footer.tsx';
 import { Container } from '@mantine/core';
 import TrendSearchForm from '../TrendSearchForm.tsx';
 import TrendContents from '../TrendContents.tsx';
@@ -24,14 +22,12 @@ const Trend = () => {
 
   return (
     <>
-      <Header />
       <Container className={`${classes['form-section']}`}>
         <TrendSearchForm />
       </Container>
       <Container className={`${classes['contents-section']}`}>
         {trendData && <TrendContents items={trendData} />}
       </Container>
-      <Footer />
     </>
   );
 };
