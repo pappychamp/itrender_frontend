@@ -1,9 +1,3 @@
-const currentDate = () => {
-  const date = new Date();
-  const current = date.toISOString().split('T')[0];
-  return current;
-};
-
 const getPastDates = (days: number) => {
   const dates = [];
   const today = new Date();
@@ -21,4 +15,4 @@ const getPastDates = (days: number) => {
   return dates;
 };
 
-export { currentDate, getPastDates };
+export { getPastDates };
