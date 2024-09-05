@@ -1,19 +1,13 @@
 import { Container } from '@mantine/core';
 import HomeContents from '../HomeContents.tsx';
 import Eyecatch from '../Eyecatch.tsx';
-import { useEffect, useState } from 'react';
-import { SiteData } from '../../../../types/trendApi.ts';
-import { currentDate } from '../../utils/date/dateFormatter.ts';
-import fetchAllTrendData from '../../api/fetchAllTrendData.ts';
 import classes from '../../styles/Home.module.css';
+import { useTodayTrendData } from '../../hooks/useTodayTrendData.tsx';
+import { currentDate } from '../../utils/date/dateFormatter.ts';
 
 const Home = () => {
-  const [trend, setTrend] = useState<SiteData | null>(null);
-
-  useEffect(() => {
     const date = currentDate();
-    fetchAllTrendData(date, setTrend);
-  }, []);
+  const { todayTrendData, loading, error } = useTodayTrendData(date);
 
   return (
     <>
