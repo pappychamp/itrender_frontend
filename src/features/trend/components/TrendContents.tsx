@@ -1,6 +1,6 @@
 import { Table } from '@mantine/core';
-import { SiteItem } from '../../types/trendApi';
-import CustomBadge from '../atoms/CustomBadge';
+import { SiteItem } from '../../../types/trendApi';
+import CustomBadge from '../../../components/atoms/CustomBadge';
 
 type props = {
   items: SiteItem[];

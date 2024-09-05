@@ -1,6 +1,6 @@
 import { Select } from '@mantine/core';
 import { SiteFormOption } from '../../types/trendform';
-import { useTrend } from '../../context/TrendContext';
+import { useTrend } from '../../features/trend/context/TrendContext';
 import { SiteKey } from '../../types/trendApi';
 
 type SiteOptions = {
