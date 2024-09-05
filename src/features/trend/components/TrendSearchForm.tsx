@@ -3,7 +3,7 @@ import DateForm from '../../../components/organisms/DateForm';
 import SiteForm from '../../../components/organisms/SiteForm';
 import classes from '../styles/TrendSearchForm.module.css';
 import { useEffect, useState } from 'react';
-import { getPastDates } from '../../../utils/date/dateFormatter';
+import { getPastDates } from '../utils/date/dateFormatter.ts';
 import { siteOptions } from '../../../constants/selectOptions';
 
 const TrendSearchForm = () => {

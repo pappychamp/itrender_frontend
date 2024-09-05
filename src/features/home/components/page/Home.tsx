@@ -5,7 +5,7 @@ import Eyecatch from '../Eyecatch.tsx';
 import Footer from '../../../../components/layout/Footer.tsx';
 import { useEffect, useState } from 'react';
 import { SiteData } from '../../../../types/trendApi.ts';
-import { currentDate } from '../../../../utils/date/dateFormatter.ts';
+import { currentDate } from '../../utils/date/dateFormatter.ts';
 import fetchAllTrendData from '../../api/fetchAllTrendData.ts';
 import classes from '../../styles/Home.module.css';
 
