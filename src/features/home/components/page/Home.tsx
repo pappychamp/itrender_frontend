@@ -6,7 +6,7 @@ import { useTodayTrendData } from '../../hooks/useTodayTrendData.tsx';
 import { currentDate } from '../../utils/date/dateFormatter.ts';
 
 const Home = () => {
-    const date = currentDate();
+  const date = currentDate();
   const { todayTrendData, loading, error } = useTodayTrendData(date);
 
   return (
@@ -15,7 +15,7 @@ const Home = () => {
         <Eyecatch />
       </Container>
       <Container className={`${classes['contents-section']}`}>
-        {trend && <HomeContents data={trend} />}
+        <HomeContents data={todayTrendData} loading={loading} error={error} />
       </Container>
     </>
   );

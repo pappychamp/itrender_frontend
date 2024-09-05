@@ -5,12 +5,28 @@ import YoutubeContent from '../../../components/organisms/YoutubeContent.tsx';
 import ListContent from '../../../components/organisms/ListContent.tsx';
 import replaceText from '../utils/format/replaceText.ts';
 import { SiteData, SiteItem, SiteKey } from '../../../types/trendApi.ts';
+import LoadingCircle from '../../../components/atoms/LoadingCircle.tsx';
+import CustomAlert from '../../../components/atoms/CustomAlert.tsx';
+import { IconCircleX } from '@tabler/icons-react';
 
 type props = {
-  data: SiteData;
+  data: SiteData | null;
+  loading: boolean;
+  error: Error | null;
 };
 
-const HomeContents = ({ data }: props) => {
+const HomeContents = ({ data, loading, error }: props) => {
+  if (loading) return <LoadingCircle />;
+  if (error)
+    return (
+      <CustomAlert
+        icon={<IconCircleX />}
+        title="エラー"
+        message={error.message}
+        color="red"
+      />
+    );
+  if (!data) return <>ありません</>;
   return (
     <>
       {Object.entries(data).map(([key, value]: [string, SiteItem[]], index) => {
