@@ -1,4 +1,4 @@
-import { getSiteTrendData } from '../../../api/dataFetcher';
+import { getSiteTrendData } from './getSiteTrendData';
 import { SiteItem, SiteKey } from '../../../types/trendApi';
 
 type SetTrendData = (value: SiteItem[]) => void;

@@ -1,4 +1,4 @@
-import { SiteData, SiteItem, SiteKey } from '../../types/trendApi';
+import { SiteData, SiteItem, SiteKey } from '../../../../types/trendApi';
 
 const trendDataFormat = (data: SiteData) => {
   const formattedData: { [key in SiteKey]: SiteItem[] } = {

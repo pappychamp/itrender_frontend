@@ -3,7 +3,7 @@ import { Container, Text } from '@mantine/core';
 import CarouselContent from '../../../components/organisms/CarouselContent.tsx';
 import YoutubeContent from '../../../components/organisms/YoutubeContent.tsx';
 import ListContent from '../../../components/organisms/ListContent.tsx';
-import replaceText from '../../../utils/format/replaceText.ts';
+import replaceText from '../utils/format/replaceText.ts';
 import { SiteData, SiteItem, SiteKey } from '../../../types/trendApi.ts';
 
 type props = {
