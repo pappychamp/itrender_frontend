@@ -4,10 +4,10 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    "plugin:react/recommended", // 追記
-    "plugin:react/jsx-runtime", // 追記
+    'plugin:react/recommended', // 追記
+    'plugin:react/jsx-runtime', // 追記
     'plugin:react-hooks/recommended',
-    'prettier' // 追記
+    'prettier', // 追記
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
@@ -15,7 +15,7 @@ module.exports = {
   // 追記
   settings: {
     react: {
-      version: "detect",
+      version: 'detect',
     },
   },
   rules: {
@@ -24,4 +24,4 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
-}
+};
