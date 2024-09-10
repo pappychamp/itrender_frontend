@@ -1,6 +1,6 @@
 import { List } from '@mantine/core';
-import classes from '../../styles/home/ListContent.module.css';
-import { SiteItem } from '../../types/trendData';
+import classes from '../../styles/ListContent.module.css';
+import { SiteItem } from '../../../../types/trendData';
 
 type props = {
   data: SiteItem[];

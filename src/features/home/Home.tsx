@@ -1,8 +1,8 @@
 import { Container, Text } from '@mantine/core';
-import HomeContents from '../HomeContents.tsx';
-import Eyecatch from '../Eyecatch.tsx';
-import classes from '../../styles/Home.module.css';
-import { useLatestTrendData } from '../../hooks/useLatestTrendData.tsx';
+import HomeContents from './components/HomeContents.tsx';
+import Eyecatch from './components/Eyecatch.tsx';
+import classes from './styles/Home.module.css';
+import { useLatestTrendData } from './hooks/useLatestTrendData.tsx';
 
 const Home = () => {
   const { latestTrendData, latestDate, loading, error } = useLatestTrendData();
