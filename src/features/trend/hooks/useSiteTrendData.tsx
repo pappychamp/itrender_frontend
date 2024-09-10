@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { SiteItem, SiteKey } from '../../../types/trendApi';
+import { SiteItem, SiteKey } from '../../../types/trendData';
 import { getSiteTrendData } from '../api/getSiteTrendData';
 
 const useSiteTrendData = (site: SiteKey, date: string) => {

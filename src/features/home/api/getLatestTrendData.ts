@@ -1,5 +1,5 @@
 import apiClient from '../../../api/apiClient';
-import { ApiData } from '../../../types/trendApi';
+import { ApiData } from '../types/api';
 
 const getLatestTrendData = async (): Promise<ApiData> => {
   try {
