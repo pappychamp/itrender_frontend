@@ -20,6 +20,7 @@ const useLatestTrendData = () => {
         setLatestTrendData(trendData);
       } catch (error) {
         setError(error as Error);
+        setLatestDate('');
         setLatestTrendData(null);
         console.log(error);
       } finally {
