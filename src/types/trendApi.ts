@@ -22,4 +22,8 @@ type SiteData = {
   [key in SiteKey]?: SiteItem[];
 };
 
-export type { SiteData, SiteItem, SiteKey };
+type ApiData = {
+  [key: string]: SiteData;
+};
+
+export type { ApiData, SiteData, SiteItem, SiteKey };
