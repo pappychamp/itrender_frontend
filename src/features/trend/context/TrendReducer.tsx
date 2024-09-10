@@ -1,4 +1,4 @@
-import { SiteKey } from '../types/trendApi';
+import { SiteKey } from '../../../types/trendData';
 
 // 状態の型定義
 export type State = {

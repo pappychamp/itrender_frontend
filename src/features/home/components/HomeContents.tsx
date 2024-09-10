@@ -4,7 +4,7 @@ import CarouselContent from '../../../components/organisms/CarouselContent.tsx';
 import YoutubeContent from '../../../components/organisms/YoutubeContent.tsx';
 import ListContent from '../../../components/organisms/ListContent.tsx';
 import replaceText from '../utils/format/replaceText.ts';
-import { SiteData, SiteItem, SiteKey } from '../../../types/trendApi.ts';
+import { SiteData, SiteItem, SiteKey } from '../../../types/trendData.ts';
 import LoadingCircle from '../../../components/atoms/LoadingCircle.tsx';
 import CustomAlert from '../../../components/atoms/CustomAlert.tsx';
 import { IconCircleX } from '@tabler/icons-react';

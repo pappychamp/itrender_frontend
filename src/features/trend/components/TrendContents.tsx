@@ -1,5 +1,5 @@
 import { Table } from '@mantine/core';
-import { SiteItem } from '../../../types/trendApi';
+import { SiteItem } from '../../../types/trendData';
 import CustomBadge from '../../../components/atoms/CustomBadge';
 import CustomAlert from '../../../components/atoms/CustomAlert';
 import { IconCircleX, IconInfoCircle } from '@tabler/icons-react';

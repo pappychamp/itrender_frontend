@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { SiteData } from '../../../types/trendApi';
+import { SiteData } from '../../../types/trendData';
 import { getLatestTrendData } from '../api/getLatestTrendData';
 
 const useLatestTrendData = () => {
