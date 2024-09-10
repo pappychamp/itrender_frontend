@@ -1,6 +1,6 @@
 import { Container } from '@mantine/core';
-import DateForm from '../../../components/organisms/DateForm';
-import SiteForm from '../../../components/organisms/SiteForm';
+import DateForm from './TrendSearchForm/DateForm.tsx';
+import SiteForm from './TrendSearchForm/SiteForm.tsx';
 import classes from '../styles/TrendSearchForm.module.css';
 import { useEffect, useState } from 'react';
 import { getPastDates } from '../utils/date/dateFormatter.ts';

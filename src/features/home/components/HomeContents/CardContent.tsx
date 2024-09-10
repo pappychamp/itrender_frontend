@@ -1,9 +1,9 @@
 import { Card, Text, Container, Image } from '@mantine/core';
-import CustomAvatar from '../atoms/CustomAvatar';
-import classes from '../../styles/home/CardContent.module.css';
-import qiitaImage from '../../assets/qiita.png';
-import zennImage from '../../assets/zenn.png';
-import { SiteItem } from '../../types/trendData';
+import CustomAvatar from '../../../../components/atoms/CustomAvatar';
+import classes from '../../styles/CardContent.module.css';
+import qiitaImage from '../../../../assets/qiita.png';
+import zennImage from '../../../../assets/zenn.png';
+import { SiteItem } from '../../../../types/trendData';
 
 type props = {
   data: SiteItem;

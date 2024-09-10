@@ -1,8 +1,8 @@
 import { Carousel } from '@mantine/carousel';
-import CardContent from '../molecules/CardContent.tsx';
-import classes from '../../styles/home/CarouselContent.module.css';
+import CardContent from './CardContent.tsx';
+import classes from '../../styles/CarouselContent.module.css';
 import { useState, useEffect } from 'react';
-import { SiteItem } from '../../types/trendData.ts';
+import { SiteItem } from '../../../../types/trendData.ts';
 
 type props = {
   data: SiteItem[];
