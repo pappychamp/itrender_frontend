@@ -19,7 +19,7 @@ type SiteItem = {
 };
 
 type SiteData = {
-  [key in SiteKey]: SiteItem[];
+  [key in SiteKey]?: SiteItem[];
 };
 
 export type { SiteData, SiteItem, SiteKey };
