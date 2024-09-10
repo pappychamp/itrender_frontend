@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { SiteItem, SiteKey } from '../../../types/trendData';
 import { getSiteTrendData } from '../api/getSiteTrendData';
 
-const useSiteTrendData = (site: SiteKey, date: string) => {
+const useSiteTrendData = (site: SiteKey | '', date: string) => {
   const [trendData, setTrendData] = useState<SiteItem[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error | null>(null);

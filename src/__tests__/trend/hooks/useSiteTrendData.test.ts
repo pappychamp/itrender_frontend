@@ -73,4 +73,22 @@ describe('useSiteTrendDataテスト', () => {
       expect(spy).toHaveBeenCalledWith(mockSite, mockDate);
     });
   });
+  it('異常系: 引数siteが空だった場合', async () => {
+    const mockError = new Error('API fetch failed');
+    spy.mockRejectedValue(mockError); // エラーを投げる
+
+    const { result } = renderHook(() => hook.useSiteTrendData('', mockDate));
+    expect(result.current.trendData).toEqual([]);
+    expect(result.current.loading).toBe(false);
+    expect(result.current.error).toBeNull();
+  });
+  it('異常系: 引数dateが空だった場合', async () => {
+    const mockError = new Error('API fetch failed');
+    spy.mockRejectedValue(mockError); // エラーを投げる
+
+    const { result } = renderHook(() => hook.useSiteTrendData(mockSite, ''));
+    expect(result.current.trendData).toEqual([]);
+    expect(result.current.loading).toBe(false);
+    expect(result.current.error).toBeNull();
+  });
 });
