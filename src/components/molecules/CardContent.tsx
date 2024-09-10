@@ -3,7 +3,7 @@ import CustomAvatar from '../atoms/CustomAvatar';
 import classes from '../../styles/home/CardContent.module.css';
 import qiitaImage from '../../assets/qiita.png';
 import zennImage from '../../assets/zenn.png';
-import { SiteItem } from '../../types/trendApi';
+import { SiteItem } from '../../types/trendData';
 
 type props = {
   data: SiteItem;

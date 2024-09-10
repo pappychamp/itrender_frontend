@@ -1,8 +1,8 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import * as hook from '../../../features/home/hooks/useLatestTrendData';
 import * as fetchApi from '../../../features/home/api/getLatestTrendData';
-import { ApiData } from '../../../types/trendApi';
 import { renderHook, waitFor } from '@testing-library/react';
+import { ApiData } from '../../../features/home/types/api';
 
 describe('useLatestTrendDataテスト', () => {
   const mockDate = '2024-01-01';

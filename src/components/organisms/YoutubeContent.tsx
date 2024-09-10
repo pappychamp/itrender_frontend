@@ -2,7 +2,7 @@ import { AspectRatio, Container, Grid, Text } from '@mantine/core';
 import classes from '../../styles/home/YoutubeContent.module.css';
 import parse from 'html-react-parser';
 import CustomAvatar from '../atoms/CustomAvatar';
-import { SiteItem } from '../../types/trendApi';
+import { SiteItem } from '../../types/trendData';
 
 type props = {
   data: SiteItem[];

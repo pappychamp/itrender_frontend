@@ -1,5 +1,5 @@
-import { SiteKey } from '../types/trendApi';
-import { SiteFormOption } from '../types/trendform';
+import { SiteKey } from '../types/trendData';
+import { SiteFormOption } from '../types/trendForm';
 
 type SiteOptions = {
   value: SiteKey;
