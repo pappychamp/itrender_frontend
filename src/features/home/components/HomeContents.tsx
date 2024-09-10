@@ -17,16 +17,15 @@ type props = {
 
 const HomeContents = ({ data, loading, error }: props) => {
   if (loading) return <LoadingCircle />;
-  if (error)
+  if (error || !data)
     return (
       <CustomAlert
         icon={<IconCircleX />}
         title="エラー"
-        message={error.message}
+        message={error ? error.message : 'データがありません'}
         color="red"
       />
     );
-  if (!data) return <>ありません</>;
   return (
     <>
       {Object.entries(data).map(([key, value]: [string, SiteItem[]], index) => {

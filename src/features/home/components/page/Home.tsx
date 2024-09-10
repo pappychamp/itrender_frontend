@@ -1,21 +1,24 @@
-import { Container } from '@mantine/core';
+import { Container, Text } from '@mantine/core';
 import HomeContents from '../HomeContents.tsx';
 import Eyecatch from '../Eyecatch.tsx';
 import classes from '../../styles/Home.module.css';
-import { useTodayTrendData } from '../../hooks/useTodayTrendData.tsx';
-import { currentDate } from '../../utils/date/dateFormatter.ts';
+import { useLatestTrendData } from '../../hooks/useLatestTrendData.tsx';
 
 const Home = () => {
-  const date = currentDate();
-  const { todayTrendData, loading, error } = useTodayTrendData(date);
+  const { latestTrendData, latestDate, loading, error } = useLatestTrendData();
 
   return (
     <>
       <Container className={`${classes['eyecatch-section']}`}>
         <Eyecatch />
       </Container>
+      <Container className={`${classes['date-section']}`}>
+        <Text className={`${classes['date-text']}`}>
+          最終更新日:{latestDate}
+        </Text>
+      </Container>
       <Container className={`${classes['contents-section']}`}>
-        <HomeContents data={todayTrendData} loading={loading} error={error} />
+        <HomeContents data={latestTrendData} loading={loading} error={error} />
       </Container>
     </>
   );
