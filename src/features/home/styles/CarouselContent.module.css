@@ -4,14 +4,11 @@
     height: 200px;
   }
 }
-.carousel-slide {
-  /* height: 100%; */
-}
 @media (max-width: 550px) {
   .carousel-controls {
     display: none !important; /* 600px以下の画面幅では非表示 */
   }
   .carousel-container {
-    width: 200%;
+    width: 100%;
   }
 }

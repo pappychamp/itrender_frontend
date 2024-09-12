@@ -10,16 +10,15 @@
 .card:hover {
   background-color: #f0f0f0; /* ホバー時の背景色を設定 */
 }
-.avatar-container {
+.avatar-box {
   height: 10%;
-  margin-left: 1px !important;
   @media (max-width: 550px) {
     height: 20%;
     margin: auto !important;
   }
 }
-.content-container {
-  height: 40%;
+.content-box {
+  height: 30%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,8 +29,8 @@
 .content-image {
   height: 90%;
 }
-.title-container {
-  height: 50%;
+.title-box {
+  height: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,37 +39,9 @@
   }
 }
 .title-text {
-  word-wrap: break-word !important;
   white-space: normal !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 3; /* 最大行数を指定 */
-  -webkit-box-orient: vertical !important;
-  max-height: 80% !important;
-  /* --mantine-font-size-md: calc(1.2rem * var(--mantine-scale)); */
   font-size: 24px !important;
-  font-weight: bold !important;
   @media (max-width: 550px) {
-    font-size: 16px !important;
+    font-size: 12px !important;
   }
 }
-/* .badge-container {
-  height: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @media (max-width: 550px) {
-    height: 40%;
-  }
-}
-.badge-group {
-  word-wrap: break-word !important;
-  white-space: normal !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 3; 
-  -webkit-box-orient: vertical !important;
-  max-height: 100% !important;
-} */

@@ -1,35 +1,16 @@
 import { Carousel } from '@mantine/carousel';
 import CardContent from './CardContent.tsx';
 import classes from '../../styles/CarouselContent.module.css';
-import { useState, useEffect } from 'react';
 import { SiteItem } from '../../../../types/trendData.ts';
+import theme from '../../../../constants/theme.ts';
+import { useMediaQuery } from '@mantine/hooks';
 
 type props = {
   data: SiteItem[];
 };
 
 const CarouselContent = ({ data }: props) => {
-  const [slidesToScroll, setSlidesToScroll] = useState(3);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 600) {
-        setSlidesToScroll(1);
-      } else {
-        setSlidesToScroll(3);
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    // 初期サイズを設定
-    handleResize();
-
-    // クリーンアップ
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
   return (
     <>
       <Carousel
@@ -37,10 +18,10 @@ const CarouselContent = ({ data }: props) => {
         height="100%"
         className={classes.carousel}
         controlsOffset="xs"
-        slideSize="33.333333%"
+        slideSize={mobile ? '50%' : '20%'}
         slideGap="xs"
         align="start"
-        slidesToScroll={slidesToScroll}
+        slidesToScroll={mobile ? 2 : 5}
         controlSize={40}
         classNames={{
           controls: `${classes['carousel-controls']}`, // カスタムクラスを適用
@@ -49,10 +30,7 @@ const CarouselContent = ({ data }: props) => {
       >
         {data.slice(0, 10).map((item, index) => {
           return (
-            <Carousel.Slide
-              key={index}
-              className={`${classes['carousel-slide']}`}
-            >
+            <Carousel.Slide key={index}>
               <CardContent data={item} />
             </Carousel.Slide>
           );
