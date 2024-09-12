@@ -1,4 +1,4 @@
-import { Card, Text, Container, Image } from '@mantine/core';
+import { Card, Text, Image, Box } from '@mantine/core';
 import CustomAvatar from '../../../../components/atoms/CustomAvatar';
 import classes from '../../styles/CardContent.module.css';
 import qiitaImage from '../../../../assets/qiita.png';
@@ -25,24 +25,21 @@ const CardContent = ({ data }: props) => {
       rel="noopener noreferrer"
     >
       <Card shadow="sm" radius="md" withBorder className={classes.card}>
-        <Container className={`${classes['avatar-container']}`}>
+        <Box className={`${classes['avatar-box']}`}>
           <CustomAvatar name={String(ranking)} />
-        </Container>
-        <Container className={`${classes['content-container']}`}>
+        </Box>
+        <Box className={`${classes['content-box']}`}>
           <Image src={srcImage} className={`${classes['content-image']}`} />
-        </Container>
-        <Container className={`${classes['title-container']}`}>
-          <Text className={`${classes['title-text']}`} truncate="end">
+        </Box>
+        <Box className={`${classes['title-box']}`}>
+          <Text
+            className={`${classes['title-text']}`}
+            truncate="end"
+            lineClamp={4}
+          >
             {title}
           </Text>
-        </Container>
-        {/* <Container className={`${classes['badge-container']}`}>
-          <Group className={`${classes['badge-group']}`}>
-            {tags.map((tag, index) => {
-              return <CustomBadge name={tag.name} key={index} size="md" />;
-            })}
-          </Group>
-        </Container> */}
+        </Box>
       </Card>
     </a>
   );

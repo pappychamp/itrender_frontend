@@ -1,5 +1,5 @@
-import classes from '../styles/Contents.module.css';
-import { Container, Text } from '@mantine/core';
+import classes from '../styles/HomeContents.module.css';
+import { Box, Text } from '@mantine/core';
 import CarouselContent from './HomeContents/CarouselContent.tsx';
 import YoutubeContent from './HomeContents/YoutubeContent.tsx';
 import ListContent from './HomeContents/ListContent.tsx';
@@ -32,36 +32,30 @@ const HomeContents = ({ data, loading, error }: props) => {
         const siteKey = key as SiteKey;
         if (siteKey === 'youtube') {
           return (
-            <div key={index} className={`${classes['main-container']}`}>
-              <Container className={`${classes['site-text-container']}`}>
-                <Text className={`${classes['site-text']}`}>
-                  {replaceText(siteKey)}
-                </Text>
-              </Container>
-              <YoutubeContent data={value} />
-            </div>
-          );
-        } else if (siteKey === 'yahoo') {
-          return (
-            <div key={index} className={`${classes['main-container']}`}>
-              <Container className={`${classes['site-text-container']}`}>
-                <Text className={`${classes['site-text']}`}>
-                  {replaceText(siteKey)}
-                </Text>
-              </Container>
-              <ListContent data={value} />
-            </div>
-          );
-        }
-        return (
-          <div key={index} className={`${classes['main-container']}`}>
-            <Container className={`${classes['site-text-container']}`}>
+            <Box key={index} className={`${classes['main-box']}`}>
               <Text className={`${classes['site-text']}`}>
                 {replaceText(siteKey)}
               </Text>
-            </Container>
+              <YoutubeContent data={value} />
+            </Box>
+          );
+        } else if (siteKey === 'yahoo') {
+          return (
+            <Box key={index} className={`${classes['main-box']}`}>
+              <Text className={`${classes['site-text']}`}>
+                {replaceText(siteKey)}
+              </Text>
+              <ListContent data={value} />
+            </Box>
+          );
+        }
+        return (
+          <Box key={index} className={`${classes['main-box']}`}>
+            <Text className={`${classes['site-text']}`}>
+              {replaceText(siteKey)}
+            </Text>
             <CarouselContent data={value} />
-          </div>
+          </Box>
         );
       })}
     </>

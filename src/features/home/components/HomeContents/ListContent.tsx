@@ -17,7 +17,7 @@ const ListContent = ({ data }: props) => {
     >
       {data.slice(0, 10).map((item, index) => {
         return (
-          <List.Item key={index} className={`${classes['list-item']}`}>
+          <List.Item key={index}>
             <a
               href={item.url ?? '#'}
               className={`${classes['a']}`}
