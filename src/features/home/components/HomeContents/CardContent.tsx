@@ -2,7 +2,7 @@ import { Card, Text, Container, Image } from '@mantine/core';
 import CustomAvatar from '../../../../components/atoms/CustomAvatar';
 import classes from '../../styles/CardContent.module.css';
 import qiitaImage from '../../../../assets/qiita.png';
-import zennImage from '../../../../assets/zenn.png';
+import zennImage from '../../../../assets/zenn.svg';
 import { SiteItem } from '../../../../types/trendData';
 
 type props = {
@@ -26,7 +26,7 @@ const CardContent = ({ data }: props) => {
     >
       <Card shadow="sm" radius="md" withBorder className={classes.card}>
         <Container className={`${classes['avatar-container']}`}>
-          <CustomAvatar name={String(ranking) ?? '0'} />
+          <CustomAvatar name={String(ranking)} />
         </Container>
         <Container className={`${classes['content-container']}`}>
           <Image src={srcImage} className={`${classes['content-image']}`} />

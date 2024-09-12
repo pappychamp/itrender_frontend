@@ -22,7 +22,7 @@
   -webkit-line-clamp: 1; /* 最大行数を指定 */
   -webkit-box-orient: vertical !important;
   /* --mantine-font-size-md: calc(1.2rem * var(--mantine-scale)); */
-  font-size: 1.2rem !important;
+  font-size: 24px !important;
   font-weight: bold !important;
   @media (max-width: 550px) {
     -webkit-line-clamp: 3;
