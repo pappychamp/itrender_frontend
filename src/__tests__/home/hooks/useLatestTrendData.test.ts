@@ -1,4 +1,3 @@
-import { afterEach, describe, expect, it, vi } from 'vitest';
 import * as hook from '../../../features/home/hooks/useLatestTrendData';
 import * as fetchApi from '../../../features/home/api/getLatestTrendData';
 import { renderHook, waitFor } from '@testing-library/react';

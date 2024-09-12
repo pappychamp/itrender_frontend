@@ -19,8 +19,10 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    // vitest のグローバル関数や変数を直接利用できるようにする設定。
+    "types": ["vitest/globals"]
   },
-  "include": ["src"],
+  "include": ["src", "vitest.setup.ts"],
   "exclude": ["node_modules"]
 }
