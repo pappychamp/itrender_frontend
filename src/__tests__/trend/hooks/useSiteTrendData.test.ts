@@ -1,4 +1,3 @@
-import { afterEach, describe, expect, it, vi } from 'vitest';
 import * as hook from '../../../features/trend/hooks/useSiteTrendData';
 import * as fetchApi from '../../../features/trend/api/getSiteTrendData';
 import { SiteItem, SiteKey } from '../../../types/trendData';
