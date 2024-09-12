@@ -16,7 +16,7 @@ const YoutubeContent = ({ data }: props) => {
           return (
             <Grid.Col
               key={index}
-              span={{ xs: 12, sm: 12, md: 4, lg: 3, xl: 2.4 }}
+              span={{ xs: 12, sm: 12, md: 4, lg: 4, xl: 4 }}
             >
               <Container className={`${classes['main-container']}`}>
                 <Container className={`${classes['avatar-container']}`}>
