@@ -1,6 +1,6 @@
 import { Container, Group, Image, Text } from '@mantine/core';
 import classes from '../../styles/Header.module.css';
-import CustomTabs from '../atoms/CustomTabs';
+import CustomTabs from '../molecules/CustomTabs';
 // import BurgerDrawer from '../molecules/BurgerDrawer';
 import logoImage from '../../assets/logo.png';
 const tabs = [
