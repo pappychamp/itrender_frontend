@@ -1,7 +1,6 @@
 import { Anchor } from '@mantine/core';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import classes from '../../styles/Header.module.css';
-import { useEffect, useState } from 'react';
 
 type tabs = {
   name: string;
@@ -10,20 +9,11 @@ type tabs = {
 
 type props = {
   tabs: tabs[];
+  active: number;
 };
 
 const CustomTabs = (props: props) => {
-  const { tabs } = props;
-  const [active, setActive] = useState(0);
-  const location = useLocation();
-
-  // 現在のパスを監視し、active 状態を更新する
-  useEffect(() => {
-    const currentTab = tabs.findIndex((tab) => tab.path === location.pathname);
-    if (currentTab !== -1) {
-      setActive(currentTab);
-    }
-  }, [location.pathname, tabs]);
+  const { tabs, active } = props;
 
   return (
     <>
