@@ -1,24 +1,9 @@
-import { Container, Image, Title, Text } from '@mantine/core';
-import imagesrc from '../../../assets/desktop.png';
+import { Image } from '@mantine/core';
 import classes from '../styles/Eyecatch.module.css';
+import eyecatch from '../../../assets/eyechatch.png';
 
 const Eyecatch = () => {
-  return (
-    <>
-      <Container className={`${classes['title-container']}`}>
-        <Text className={`${classes['title-text']}`}>
-          今日のトレンドが分かる
-        </Text>
-        <Text className={`${classes['title-text']}`}>
-          トレンドまとめサービス
-        </Text>
-        <Title className={classes.title}>Trender</Title>
-      </Container>
-      <Container className={`${classes['image-container']}`}>
-        <Image src={imagesrc} className={classes.image} />
-      </Container>
-    </>
-  );
+  return <Image src={eyecatch} className={`${classes['image']}`}></Image>;
 };
 
 export default Eyecatch;

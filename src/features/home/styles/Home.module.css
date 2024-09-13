@@ -1,13 +1,7 @@
 .eyecatch-section {
-  max-width: 100% !important;
-  width: 100% !important;
-  /* --container-size: 100% !important; */
-  background-color: #5647f5;
+  background-color: #b1c9eb;
   display: flex;
-  @media (max-width: 550px) {
-    padding: 1rem !important;
-    margin-bottom: 0px;
-  }
+  justify-content: center;
 }
 .date-section {
   max-width: 80% !important;
@@ -21,10 +15,10 @@
   }
 }
 .date-text {
-  font-size: 1.5rem !important;
+  font-size: 24px !important;
   font-weight: lighter !important;
   @media (max-width: 550px) {
-    font-size: 1rem !important;
+    font-size: 16px !important;
   }
 }
 .contents-section {

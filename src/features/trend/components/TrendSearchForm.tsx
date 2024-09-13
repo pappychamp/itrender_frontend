@@ -1,4 +1,4 @@
-import { Container } from '@mantine/core';
+import { Box } from '@mantine/core';
 import DateForm from './TrendSearchForm/DateForm.tsx';
 import SiteForm from './TrendSearchForm/SiteForm.tsx';
 import classes from '../styles/TrendSearchForm.module.css';
@@ -15,14 +15,14 @@ const TrendSearchForm = () => {
 
   return (
     <>
-      <Container className={`${classes['main-section']}`}>
-        <Container className={`${classes['form-section']}`}>
+      <Box className={`${classes['main-section']}`}>
+        <Box className={`${classes['form-section']}`}>
           <SiteForm siteOptions={siteOptions} />
-        </Container>
-        <Container className={`${classes['form-section']}`}>
+        </Box>
+        <Box className={`${classes['form-section']}`}>
           {date && <DateForm date={date} />}
-        </Container>
-      </Container>
+        </Box>
+      </Box>
     </>
   );
 };
