@@ -11,6 +11,8 @@ const siteOptions: SiteOptions[] = [
   { value: 'youtube', label: 'Youtube' },
   { value: 'qiita', label: 'Qiita' },
   { value: 'zenn', label: 'Zenn' },
+  { value: 'techplus', label: 'TechPlus' },
+  { value: 'thinkit', label: 'ThinkIT' },
 ];
 
 export { siteOptions };

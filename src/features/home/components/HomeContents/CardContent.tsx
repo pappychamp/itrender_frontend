@@ -1,22 +1,18 @@
 import { Card, Text, Image, Box } from '@mantine/core';
 import CustomAvatar from '../../../../components/atoms/CustomAvatar';
 import classes from '../../styles/CardContent.module.css';
-import qiitaImage from '../../../../assets/qiita.png';
-import zennImage from '../../../../assets/zenn.svg';
 import { SiteItem } from '../../../../types/trendData';
+import noImage from '../../../../assets/noimage.png';
+import { useMediaQuery } from '@mantine/hooks';
+import theme from '../../../../constants/theme';
 
 type props = {
   data: SiteItem;
 };
 
 const CardContent = ({ data }: props) => {
-  const { title, ranking, url, site } = data;
-  let srcImage;
-  if (site.name === 'qiita') {
-    srcImage = qiitaImage;
-  } else if (site.name === 'zenn') {
-    srcImage = zennImage;
-  }
+  const { title, ranking, url, embed_html } = data;
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
   return (
     <a
       href={url ?? '#'}
@@ -29,13 +25,16 @@ const CardContent = ({ data }: props) => {
           <CustomAvatar name={String(ranking)} />
         </Box>
         <Box className={`${classes['content-box']}`}>
-          <Image src={srcImage} className={`${classes['content-image']}`} />
+          <Image
+            src={embed_html ? embed_html : noImage}
+            className={`${classes['content-image']}`}
+          />
         </Box>
         <Box className={`${classes['title-box']}`}>
           <Text
             className={`${classes['title-text']}`}
             truncate="end"
-            lineClamp={4}
+            lineClamp={mobile ? 2 : 3}
           >
             {title}
           </Text>
