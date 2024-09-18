@@ -1,4 +1,4 @@
-type SiteKey = 'qiita' | 'youtube' | 'zenn' | 'yahoo';
+type SiteKey = 'qiita' | 'youtube' | 'zenn' | 'yahoo' | 'techplus' | 'thinkit';
 type Site = {
   name: SiteKey;
   content: string;
