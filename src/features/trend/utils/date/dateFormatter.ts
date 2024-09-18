@@ -7,11 +7,16 @@ const getPastDates = (days: number) => {
     pastDate.setDate(today.getDate() - i);
 
     // 日付を 'YYYY/MM/DD' の形式にフォーマット
-    const formattedDate = pastDate.toISOString().split('T')[0];
+    const formattedDate = pastDate
+      .toLocaleDateString('ja-JP', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+      })
+      .replace(/\//g, '-');
 
     dates.push(formattedDate);
   }
-
   return dates;
 };
 

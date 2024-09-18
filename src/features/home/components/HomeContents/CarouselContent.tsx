@@ -18,10 +18,10 @@ const CarouselContent = ({ data }: props) => {
         height="100%"
         className={classes.carousel}
         controlsOffset="xs"
-        slideSize={mobile ? '50%' : '20%'}
+        slideSize={mobile ? '100%' : '50%'}
         slideGap="xs"
         align="start"
-        slidesToScroll={mobile ? 2 : 5}
+        slidesToScroll="auto"
         controlSize={40}
         classNames={{
           controls: `${classes['carousel-controls']}`, // カスタムクラスを適用
