@@ -3,7 +3,7 @@ import classes from '../../styles/CarouselContent.module.css';
 import { SiteItem } from '../../../../types/trendData.ts';
 import theme from '../../../../constants/theme.ts';
 import { useMediaQuery } from '@mantine/hooks';
-import CardContent from '../../../../components/molecules/CardContent.tsx';
+import CardContent from '../../../../components/organisms/CardContent.tsx';
 import { IconChevronRight, IconChevronLeft } from '@tabler/icons-react';
 
 type props = {

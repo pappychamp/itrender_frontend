@@ -2,7 +2,7 @@ import { SiteItem } from '../../../types/trendData';
 import CustomAlert from '../../../components/atoms/CustomAlert';
 import { IconCircleX, IconInfoCircle } from '@tabler/icons-react';
 import LoadingCircle from '../../../components/atoms/LoadingCircle';
-import CardContent from '../../../components/molecules/CardContent';
+import CardContent from '../../../components/organisms/CardContent';
 import { Grid } from '@mantine/core';
 import theme from '../../../constants/theme';
 import { useMediaQuery } from '@mantine/hooks';
