@@ -3,7 +3,7 @@ import CustomAvatar from '../atoms/CustomAvatar';
 import classes from '../../styles/CardContent.module.css';
 import { SiteItem } from '../../types/trendData';
 import noImage from '../../assets/noimage.png';
-import TagContent from '../atoms/TagContent';
+import TagContent from '../molecules/TagContent';
 
 type props = {
   data: SiteItem;
