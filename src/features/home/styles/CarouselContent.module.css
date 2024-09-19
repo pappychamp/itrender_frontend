@@ -4,11 +4,24 @@
     height: 200px;
   }
 }
-@media (max-width: 550px) {
-  .carousel-controls {
-    display: none !important; /* 600px以下の画面幅では非表示 */
-  }
-  .carousel-container {
-    width: 100%;
+.carousel-container {
+  width: 90%;
+}
+.carousel-controls {
+  padding: 0px !important;
+}
+.carousel-control {
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0% !important;
+  color: rgb(172, 172, 172) !important;
+}
+.carousel-control:hover {
+  color: rgb(0, 0, 0) !important;
+}
+.carousel-viewport {
+  margin-inline: 45px;
+  @media (max-width: 550px) {
+    margin-inline: 0px;
   }
 }
