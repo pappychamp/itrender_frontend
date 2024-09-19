@@ -1,9 +1,9 @@
 import { Carousel } from '@mantine/carousel';
-import CardContent from './CardContent.tsx';
 import classes from '../../styles/CarouselContent.module.css';
 import { SiteItem } from '../../../../types/trendData.ts';
 import theme from '../../../../constants/theme.ts';
 import { useMediaQuery } from '@mantine/hooks';
+import CardContent from '../../../../components/molecules/CardContent.tsx';
 
 type props = {
   data: SiteItem[];
@@ -21,7 +21,7 @@ const CarouselContent = ({ data }: props) => {
         slideSize={mobile ? '100%' : '50%'}
         slideGap="xs"
         align="start"
-        slidesToScroll="auto"
+        slidesToScroll={mobile ? 1 : 2}
         controlSize={40}
         classNames={{
           controls: `${classes['carousel-controls']}`, // カスタムクラスを適用
@@ -31,7 +31,7 @@ const CarouselContent = ({ data }: props) => {
         {data.slice(0, 10).map((item, index) => {
           return (
             <Carousel.Slide key={index}>
-              <CardContent data={item} />
+              <CardContent data={item} mobile={mobile} />
             </Carousel.Slide>
           );
         })}

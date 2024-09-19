@@ -1,0 +1,46 @@
+import { Card, Text, Image, Box } from '@mantine/core';
+import CustomAvatar from '../atoms/CustomAvatar';
+import classes from '../../styles/CardContent.module.css';
+import { SiteItem } from '../../types/trendData';
+import noImage from '../../assets/noimage.png';
+import TagContent from '../atoms/TagContent';
+
+type props = {
+  data: SiteItem;
+  mobile: boolean | undefined;
+};
+
+const CardContent = ({ data, mobile }: props) => {
+  const { title, url, ranking, image_url, tags } = data;
+  return (
+    <Card shadow="sm" radius="md" withBorder className={classes.card}>
+      <Box className={`${classes['head-box']}`}>
+        <CustomAvatar name={String(ranking)} />
+        <div className={`${classes['head-tag']}`}>
+          <TagContent tags={tags} />
+        </div>
+      </Box>
+      <Box className={`${classes['main-box']}`}>
+        <a
+          href={url ?? '#'}
+          style={{ textDecoration: 'none', color: '#000000' }}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Text
+            className={`${classes['main-text']}`}
+            truncate="end"
+            lineClamp={mobile ? 3 : 4}
+          >
+            {title}
+          </Text>
+        </a>
+        <Image
+          src={image_url ? image_url : noImage}
+          className={`${classes['main-image']}`}
+        />
+      </Box>
+    </Card>
+  );
+};
+export default CardContent;

@@ -3,9 +3,6 @@
   margin-bottom: 5%;
 }
 .site-text {
-  font-size: 64px !important;
+  font-size: 32px !important;
   font-weight: bolder !important;
-  @media (max-width: 550px) {
-    font-size: 32px !important;
-  }
 }
