@@ -1,7 +1,6 @@
 import classes from '../styles/HomeContents.module.css';
 import { Box, Text } from '@mantine/core';
 import CarouselContent from './HomeContents/CarouselContent.tsx';
-import YoutubeContent from './HomeContents/YoutubeContent.tsx';
 import replaceText from '../utils/format/replaceText.ts';
 import { SiteData, SiteItem, SiteKey } from '../../../types/trendData.ts';
 import LoadingCircle from '../../../components/atoms/LoadingCircle.tsx';
@@ -29,16 +28,6 @@ const HomeContents = ({ data, loading, error }: props) => {
     <>
       {Object.entries(data).map(([key, value]: [string, SiteItem[]], index) => {
         const siteKey = key as SiteKey;
-        if (siteKey === 'youtube') {
-          return (
-            <Box key={index} className={`${classes['main-box']}`}>
-              <Text className={`${classes['site-text']}`}>
-                {replaceText(siteKey)}
-              </Text>
-              <YoutubeContent data={value} />
-            </Box>
-          );
-        }
         return (
           <Box key={index} className={`${classes['main-box']}`}>
             <Text className={`${classes['site-text']}`}>

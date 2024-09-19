@@ -14,6 +14,7 @@ type SiteItem = {
   published_at: string;
   url: string | null;
   embed_html: string | null;
+  image_url: string | null;
   tags: Tag[] | [];
   site: Site;
 };
@@ -22,4 +23,4 @@ type SiteData = {
   [key in SiteKey]?: SiteItem[];
 };
 
-export type { SiteData, SiteItem, SiteKey };
+export type { SiteData, SiteItem, SiteKey, Tag };
