@@ -1,5 +1,5 @@
-import * as hook from '../../../features/trend/hooks/useSiteTrendData';
-import * as fetchApi from '../../../features/trend/api/getSiteTrendData';
+import * as hook from '../../../features/archive/hooks/useSiteTrendData';
+import * as fetchApi from '../../../features/archive/api/getSiteTrendData';
 import { SiteItem, SiteKey } from '../../../types/trendData';
 import { renderHook, waitFor } from '@testing-library/react';
 

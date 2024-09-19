@@ -1,6 +1,6 @@
 const headerTabs = [
   { name: 'Home', path: '/' },
-  { name: 'Trend', path: '/trend' },
+  { name: 'Archive', path: '/archive' },
 ];
 
 export { headerTabs };

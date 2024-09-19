@@ -1,7 +1,7 @@
 import Home from '../features/home/Home.tsx';
-import Trend from '../features/trend/Trend.tsx';
+import Trend from '../features/archive/Trend.tsx';
 import { Route, Routes } from 'react-router-dom';
-import { TrendProvider } from '../features/trend/context/TrendContext.tsx';
+import { TrendProvider } from '../features/archive/context/TrendContext.tsx';
 import Layout from '../components/layout/Layout.tsx';
 
 const AppRoutes = () => {
@@ -16,7 +16,7 @@ const AppRoutes = () => {
         }
       />
       <Route
-        path="/trend"
+        path="/archive"
         element={
           <TrendProvider>
             <Layout>
