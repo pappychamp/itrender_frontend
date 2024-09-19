@@ -16,9 +16,13 @@ const CardContent = ({ data, mobile }: props) => {
     <Card shadow="sm" radius="md" withBorder className={classes.card}>
       <Box className={`${classes['head-box']}`}>
         <CustomAvatar name={String(ranking)} />
-        <div className={`${classes['head-tag']}`}>
-          <TagContent tags={tags} />
-        </div>
+        {tags.length === 0 ? (
+          <></>
+        ) : (
+          <div className={`${classes['head-tag']}`}>
+            <TagContent tags={tags} />
+          </div>
+        )}
       </Box>
       <Box className={`${classes['main-box']}`}>
         <a
@@ -36,8 +40,9 @@ const CardContent = ({ data, mobile }: props) => {
           </Text>
         </a>
         <Image
-          src={image_url ? image_url : noImage}
+          src={image_url}
           className={`${classes['main-image']}`}
+          fallbackSrc={noImage}
         />
       </Box>
     </Card>

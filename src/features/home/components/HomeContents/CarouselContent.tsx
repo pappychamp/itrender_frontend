@@ -4,6 +4,7 @@ import { SiteItem } from '../../../../types/trendData.ts';
 import theme from '../../../../constants/theme.ts';
 import { useMediaQuery } from '@mantine/hooks';
 import CardContent from '../../../../components/molecules/CardContent.tsx';
+import { IconChevronRight, IconChevronLeft } from '@tabler/icons-react';
 
 type props = {
   data: SiteItem[];
@@ -17,15 +18,25 @@ const CarouselContent = ({ data }: props) => {
         // withIndicators
         height="100%"
         className={classes.carousel}
-        controlsOffset="xs"
         slideSize={mobile ? '100%' : '50%'}
         slideGap="xs"
         align="start"
-        slidesToScroll={mobile ? 1 : 2}
+        draggable={mobile}
+        dragFree
+        slidesToScroll={2}
+        withControls={!mobile}
         controlSize={40}
+        nextControlIcon={
+          <IconChevronRight style={{ width: '40px', height: '40px' }} />
+        }
+        previousControlIcon={
+          <IconChevronLeft style={{ width: '40px', height: '40px' }} />
+        }
         classNames={{
           controls: `${classes['carousel-controls']}`, // カスタムクラスを適用
           container: `${classes['carousel-container']}`, // カスタムクラスを適用
+          control: `${classes['carousel-control']}`, // カスタムクラスを適用
+          viewport: `${classes['carousel-viewport']}`, // カスタムクラスを適用
         }}
       >
         {data.slice(0, 10).map((item, index) => {
