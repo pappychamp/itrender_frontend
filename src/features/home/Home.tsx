@@ -1,6 +1,5 @@
-import { Box, Container, Text } from '@mantine/core';
+import { Container, Text } from '@mantine/core';
 import HomeContents from './components/HomeContents.tsx';
-import Eyecatch from './components/Eyecatch.tsx';
 import classes from './styles/Home.module.css';
 import { useLatestTrendData } from './hooks/useLatestTrendData.tsx';
 
@@ -9,9 +8,9 @@ const Home = () => {
 
   return (
     <>
-      <Box className={`${classes['eyecatch-section']}`}>
+      {/* <Box className={`${classes['eyecatch-section']}`}>
         <Eyecatch />
-      </Box>
+      </Box> */}
       <Container className={`${classes['date-section']}`}>
         <Text className={`${classes['date-text']}`}>
           最終更新日:{latestDate}
