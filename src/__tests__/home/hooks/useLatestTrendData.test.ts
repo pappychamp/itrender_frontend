@@ -15,6 +15,7 @@ describe('useLatestTrendDataテスト', () => {
           published_at: '2024-01-01T00:00:00Z',
           url: 'https://test.com',
           embed_html: null,
+          image_url: null,
           tags: [
             {
               name: 'test tag',

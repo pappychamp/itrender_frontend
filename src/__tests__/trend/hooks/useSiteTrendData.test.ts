@@ -1,5 +1,5 @@
-import * as hook from '../../../features/trend/hooks/useSiteTrendData';
-import * as fetchApi from '../../../features/trend/api/getSiteTrendData';
+import * as hook from '../../../features/archive/hooks/useSiteTrendData';
+import * as fetchApi from '../../../features/archive/api/getSiteTrendData';
 import { SiteItem, SiteKey } from '../../../types/trendData';
 import { renderHook, waitFor } from '@testing-library/react';
 
@@ -14,6 +14,7 @@ describe('useSiteTrendDataテスト', () => {
       published_at: '2024-01-01T00:00:00Z',
       url: 'https://test.com',
       embed_html: null,
+      image_url: null,
       tags: [
         {
           name: 'test tag',
