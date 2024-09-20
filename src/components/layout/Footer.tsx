@@ -2,8 +2,8 @@ import { Anchor, Group } from '@mantine/core';
 import classes from '../../styles/Footer.module.css';
 
 const links = [
+  { link: '#', label: 'このサイトについて' },
   { link: '#', label: 'お問い合わせ' },
-  { link: '#', label: 'プライバシーポリシー' },
 ];
 
 const Footer = () => {
