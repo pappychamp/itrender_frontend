@@ -9,7 +9,7 @@ const tabs = [
 ];
 
 describe('CustomTabs コンポーネントのテスト', () => {
-  test('タブの数が正しく表示されているか', () => {
+  test('タブの数が正しく表示されること', () => {
     render(
       <Router>
         <CustomTabs tabs={tabs} active={0} />
@@ -19,7 +19,7 @@ describe('CustomTabs コンポーネントのテスト', () => {
     expect(anchors).toHaveLength(tabs.length); // タブの数が正しいか
   });
 
-  test('activeプロパティが正しくレンダリングされているか', () => {
+  test('activeプロパティが正しくレンダリングされること', () => {
     render(
       <Router>
         <CustomTabs tabs={tabs} active={1} />
@@ -30,7 +30,7 @@ describe('CustomTabs コンポーネントのテスト', () => {
     expect(activeTab).toHaveAttribute('data-active', 'true'); // data-active 属性がついているか
   });
 
-  test('タブのパスが正しいか', () => {
+  test('タブのパスが正しいこと', () => {
     render(
       <Router>
         <CustomTabs tabs={tabs} active={0} />

@@ -43,6 +43,7 @@ const CardContent = ({ data, mobile }: props) => {
           src={image_url}
           className={`${classes['main-image']}`}
           fallbackSrc={noImage}
+          alt="contents image"
         />
       </Box>
     </Card>
