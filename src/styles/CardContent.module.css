@@ -39,5 +39,9 @@
 }
 .main-image {
   width: 30% !important;
+  max-height: 150px;
   margin-left: 10px;
+  @media (max-width: 550px) {
+    max-height: 100px;
+  }
 }

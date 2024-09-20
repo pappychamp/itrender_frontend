@@ -34,15 +34,13 @@
   font-size: 30px !important;
 }
 .anchor {
-  color: rgb(68, 68, 68) !important;
+  color: rgb(95, 99, 104) !important;
+  font-weight: bold !important;
 }
 .anchor:hover {
   color: rgb(0, 0, 0) !important;
-  font-weight: bold;
 }
 .anchor[data-active] {
-  color: rgb(0, 0, 0) !important;
-  font-weight: bold;
   border-bottom: solid;
-  border-bottom-color: rgb(116, 116, 255);
+  border-bottom-color: #4c8df6;
 }
