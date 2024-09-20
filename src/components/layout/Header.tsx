@@ -24,7 +24,11 @@ const Header = () => {
   return (
     <header className={classes.header}>
       <Container className={`${classes['image-section']}`}>
-        <Image src={logoImage} className={`${classes['content-logo']}`} />
+        <Image
+          src={logoImage}
+          className={`${classes['content-logo']}`}
+          alt="Trender logo"
+        />
         <Text className={`${classes['content-title']}`}>Trender</Text>
       </Container>
       <Group>
