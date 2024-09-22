@@ -6,6 +6,8 @@ const trendDataFormat = (data: SiteData) => {
     youtube: data.youtube || [],
     qiita: data.qiita || [],
     zenn: data.zenn || [],
+    techplus: data.techplus || [],
+    thinkit: data.thinkit || [],
   };
   // 値が空のキーを削除
   Object.keys(formattedData).forEach((key) => {

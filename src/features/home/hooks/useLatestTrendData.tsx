@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { SiteData } from '../../../types/trendData';
 import { getLatestTrendData } from '../api/getLatestTrendData';
+import { trendDataFormat } from '../utils/format/dataFormatter';
 
 const useLatestTrendData = () => {
   const [latestTrendData, setLatestTrendData] = useState<SiteData | null>(null);
@@ -17,7 +18,7 @@ const useLatestTrendData = () => {
         const latestDate = Object.keys(data)[0];
         const trendData = data[latestDate];
         setLatestDate(latestDate);
-        setLatestTrendData(trendData);
+        setLatestTrendData(trendDataFormat(trendData));
       } catch (error) {
         setError(error as Error);
         setLatestDate('');
