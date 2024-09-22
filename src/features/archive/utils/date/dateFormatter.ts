@@ -1,8 +1,8 @@
-const getPastDates = (days: number) => {
+const getPastDates = (startdays: number, enddays: number) => {
   const dates = [];
   const today = new Date();
 
-  for (let i = 0; i < days; i++) {
+  for (let i = startdays; i < enddays; i++) {
     const pastDate = new Date(today);
     pastDate.setDate(today.getDate() - i);
 

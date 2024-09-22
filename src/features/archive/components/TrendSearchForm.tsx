@@ -9,7 +9,7 @@ import { siteOptions } from '../../../constants/selectOptions';
 const TrendSearchForm = () => {
   const [date, setDate] = useState<string[] | null>(null);
   useEffect(() => {
-    const getDate = getPastDates(5);
+    const getDate = getPastDates(2, 6);
     setDate(getDate);
   }, []);
 
