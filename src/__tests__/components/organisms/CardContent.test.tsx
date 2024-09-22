@@ -50,8 +50,7 @@ describe('CustomBadge コンポーネントのテスト', () => {
     const customProps = Object.assign({}, mockProps, {
       data: Object.assign({}, mockProps.data, { image_url: '' }), // tagだけを上書き
     });
-    const { debug } = render(<CardContent {...customProps} />);
-    debug();
+    render(<CardContent {...customProps} />);
     expect(screen.getByAltText('contents image')).toHaveAttribute(
       'src',
       '/src/assets/noimage.png',
