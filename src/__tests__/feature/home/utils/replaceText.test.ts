@@ -1,5 +1,5 @@
-import replaceText from '../../../utils/format/replaceText';
-import { SiteKey } from '../../../types/trendData';
+import replaceText from '../../../../utils/format/replaceText';
+import { SiteKey } from '../../../../types/trendData';
 
 describe('replaceText 関数のテスト', () => {
   it('該当するサイト名は、正しくフォーマットされること', () => {
