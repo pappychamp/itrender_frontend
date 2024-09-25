@@ -17,7 +17,7 @@ const TagContent = ({ tags }: props) => {
           </Text>
         </HoverCard.Target>
         <HoverCard.Dropdown className={`${classes['hover-card']}`}>
-          <ScrollArea.Autosize offsetScrollbars type="always" mah={200}>
+          <ScrollArea.Autosize offsetScrollbars type="hover" mah={200}>
             {tags.map((tag, index) => (
               <Text key={index} c="white" size="sm">
                 #{tag.name}
