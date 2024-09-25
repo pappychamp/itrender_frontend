@@ -7,12 +7,9 @@
   }
 }
 .head-box {
-  min-height: 45px;
   display: flex;
   align-items: center;
-  @media (max-width: 550px) {
-    min-height: 40px;
-  }
+  margin: 5px;
 }
 .head-tag {
   display: flex;
