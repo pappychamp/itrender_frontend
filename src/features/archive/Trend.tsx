@@ -7,7 +7,7 @@ import { useSiteTrendData } from './hooks/useSiteTrendData.tsx';
 
 const Trend = () => {
   const { state } = useTrend();
-  const { trendData, loading, error } = useSiteTrendData(
+  const { trendData, hasSearched, loading, error } = useSiteTrendData(
     state.site,
     state.date,
   );
@@ -17,7 +17,12 @@ const Trend = () => {
         <TrendSearchForm />
       </Container>
       <Container className={`${classes['contents-section']}`}>
-        <TrendContents items={trendData} loading={loading} error={error} />
+        <TrendContents
+          items={trendData}
+          hasSearched={hasSearched}
+          loading={loading}
+          error={error}
+        />
       </Container>
     </>
   );

@@ -4,17 +4,20 @@ import { getSiteTrendData } from '../api/getSiteTrendData';
 
 const useSiteTrendData = (site: SiteKey | '', date: string) => {
   const [trendData, setTrendData] = useState<SiteItem[]>([]);
+  const [hasSearched, setHasSearched] = useState(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
     // stateのdateとsiteのvalueがどちらかでも空の場合は何もしない
     if (!date || !site) {
+      setHasSearched(false);
       setTrendData([]);
       return;
       // それ以外はgetSiteTrendData処理
     }
     const fetchSiteTrendData = async () => {
+      setHasSearched(true);
       setLoading(true);
       setError(null);
       try {
@@ -30,7 +33,7 @@ const useSiteTrendData = (site: SiteKey | '', date: string) => {
     };
     fetchSiteTrendData();
   }, [site, date]);
-  return { trendData, loading, error };
+  return { trendData, hasSearched, loading, error };
 };
 
 export { useSiteTrendData };
