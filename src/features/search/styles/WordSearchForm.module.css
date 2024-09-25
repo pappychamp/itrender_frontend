@@ -1,0 +1,4 @@
+.filter-word-badge {
+  text-transform: none !important; /* テキストを変換しない */
+  cursor: pointer !important;
+}

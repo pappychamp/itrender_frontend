@@ -1,0 +1,17 @@
+.search-section {
+  max-width: 80% !important;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  @media (max-width: 550px) {
+    max-width: 100% !important;
+  }
+}
+
+.contents-section {
+  max-width: 80% !important;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  @media (max-width: 550px) {
+    max-width: 100% !important;
+  }
+}
