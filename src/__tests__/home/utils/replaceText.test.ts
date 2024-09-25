@@ -1,4 +1,4 @@
-import replaceText from '../../../features/home/utils/format/replaceText';
+import replaceText from '../../../utils/format/replaceText';
 import { SiteKey } from '../../../types/trendData';
 
 describe('replaceText 関数のテスト', () => {

@@ -4,7 +4,7 @@ import { getLatestTrendData } from '../api/getLatestTrendData';
 import { trendDataFormat } from '../utils/format/dataFormatter';
 
 const useLatestTrendData = () => {
-  const [latestTrendData, setLatestTrendData] = useState<SiteData | null>(null);
+  const [latestTrendData, setLatestTrendData] = useState<SiteData>({});
   const [latestDate, setLatestDate] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error | null>(null);
@@ -22,7 +22,7 @@ const useLatestTrendData = () => {
       } catch (error) {
         setError(error as Error);
         setLatestDate('');
-        setLatestTrendData(null);
+        setLatestTrendData({});
         console.log(error);
       } finally {
         setLoading(false);

@@ -2,9 +2,9 @@ import { Alert, DefaultMantineColor } from '@mantine/core';
 
 type props = {
   icon: React.ReactNode;
-  title: string;
-  message: string;
   color: DefaultMantineColor;
+  message: string;
+  title?: string;
 };
 const CustomAlert = ({ icon, title, message, color }: props) => {
   return (

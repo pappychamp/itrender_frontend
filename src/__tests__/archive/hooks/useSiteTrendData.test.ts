@@ -42,12 +42,14 @@ describe('useSiteTrendDataテスト', () => {
 
     // 非同期処理(getSiteTrendData)前のstate検証
     expect(result.current.trendData).toEqual([]);
+    expect(result.current.hasSearched).toBe(true);
     expect(result.current.loading).toBe(true);
     expect(result.current.error).toBeNull();
 
     // 非同期処理後のstate検証
     await waitFor(() => {
       expect(result.current.trendData).toEqual(mockData);
+      expect(result.current.hasSearched).toBe(true);
       expect(result.current.loading).toBe(false);
       expect(result.current.error).toBeNull();
       // getSiteTrendDataが正しく呼び出されたかを検証
@@ -63,10 +65,12 @@ describe('useSiteTrendDataテスト', () => {
       hook.useSiteTrendData(mockSite, mockDate),
     );
     expect(result.current.trendData).toEqual([]);
+    expect(result.current.hasSearched).toBe(true);
     expect(result.current.loading).toBe(true);
     expect(result.current.error).toBeNull();
     await waitFor(() => {
       expect(result.current.trendData).toEqual([]);
+      expect(result.current.hasSearched).toBe(true);
       expect(result.current.loading).toBe(false);
       expect(result.current.error).toEqual(mockError);
       expect(spy).toHaveBeenCalledTimes(1);
@@ -79,6 +83,7 @@ describe('useSiteTrendDataテスト', () => {
 
     const { result } = renderHook(() => hook.useSiteTrendData('', mockDate));
     expect(result.current.trendData).toEqual([]);
+    expect(result.current.hasSearched).toBe(false);
     expect(result.current.loading).toBe(false);
     expect(result.current.error).toBeNull();
   });
@@ -88,6 +93,7 @@ describe('useSiteTrendDataテスト', () => {
 
     const { result } = renderHook(() => hook.useSiteTrendData(mockSite, ''));
     expect(result.current.trendData).toEqual([]);
+    expect(result.current.hasSearched).toBe(false);
     expect(result.current.loading).toBe(false);
     expect(result.current.error).toBeNull();
   });
