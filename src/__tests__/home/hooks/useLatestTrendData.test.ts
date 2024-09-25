@@ -42,7 +42,7 @@ describe('useLatestTrendDataテスト', () => {
     const { result } = renderHook(() => hook.useLatestTrendData());
 
     // 非同期処理(getLatestTrendData)前のstate検証
-    expect(result.current.latestTrendData).toBeNull();
+    expect(result.current.latestTrendData).toEqual({});
     expect(result.current.latestDate).toEqual('');
     expect(result.current.loading).toBe(true);
     expect(result.current.error).toBeNull();
@@ -62,12 +62,12 @@ describe('useLatestTrendDataテスト', () => {
     spy.mockRejectedValue(mockError); // エラーを投げる
 
     const { result } = renderHook(() => hook.useLatestTrendData());
-    expect(result.current.latestTrendData).toBeNull();
+    expect(result.current.latestTrendData).toEqual({});
     expect(result.current.latestDate).toEqual('');
     expect(result.current.loading).toBe(true);
     expect(result.current.error).toBeNull();
     await waitFor(() => {
-      expect(result.current.latestTrendData).toBeNull();
+      expect(result.current.latestTrendData).toEqual({});
       expect(result.current.latestDate).toEqual('');
       expect(result.current.loading).toBe(false);
       expect(result.current.error).toEqual(mockError);

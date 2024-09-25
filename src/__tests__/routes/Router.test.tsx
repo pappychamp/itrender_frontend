@@ -27,4 +27,15 @@ describe('AppRoutes コンポーネントのテスト', () => {
     const archiveTab = screen.getByText('Archive');
     expect(archiveTab).toHaveAttribute('data-active', 'true');
   });
+  it('"/search" にアクセスしたときに Search コンポーネントが表示されること', () => {
+    render(
+      <MemoryRouter initialEntries={['/search']}>
+        <AppRoutes />
+      </MemoryRouter>,
+    );
+    const homeTab = screen.getByText('Home');
+    expect(homeTab).not.toHaveAttribute('data-active');
+    const archiveTab = screen.getByText('Search');
+    expect(archiveTab).toHaveAttribute('data-active', 'true');
+  });
 });

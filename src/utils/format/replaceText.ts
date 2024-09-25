@@ -1,5 +1,5 @@
-import { siteOptions } from '../../../../constants/selectOptions';
-import { SiteKey } from '../../../../types/trendData';
+import { siteOptions } from '../../constants/selectOptions';
+import { SiteKey } from '../../types/trendData';
 
 const replaceText = (text: SiteKey): string => {
   // 変換ルールを定義

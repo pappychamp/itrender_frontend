@@ -7,10 +7,15 @@ describe('CustomBadge コンポーネントのテスト', () => {
   const mockProps = {
     data: siteItemData,
     mobile: false,
+    isRanking: true,
   };
   it('ランキングが正しく表示されること', () => {
     render(<CardContent {...mockProps} />);
     expect(screen.getByText('1')).toBeInTheDocument();
+  });
+  it('ランキングが正しく表示されないこと', () => {
+    render(<CardContent {...mockProps} isRanking={false} />);
+    expect(screen.queryByText('1')).not.toBeInTheDocument();
   });
   it('タグが正しく表示されること', () => {
     render(<CardContent {...mockProps} />);
