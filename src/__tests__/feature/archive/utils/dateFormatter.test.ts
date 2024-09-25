@@ -1,4 +1,4 @@
-import { getPastDates } from '../../../features/archive/utils/date/dateFormatter';
+import { getPastDates } from '../../../../features/archive/utils/date/dateFormatter';
 
 describe('replaceText 関数のテスト', () => {
   beforeEach(() => {

@@ -1,6 +1,6 @@
-import { trendDataFormat } from '../../../features/home/utils/format/dataFormatter';
-import { SiteData } from '../../../types/trendData';
-import { siteItemData } from '../../common/testData';
+import { trendDataFormat } from '../../../../features/home/utils/format/dataFormatter';
+import { SiteData } from '../../../../types/trendData';
+import { siteItemData } from '../../../common/testData';
 
 describe('trendDataFormat 関数のテスト', () => {
   const mockProps: SiteData = {
