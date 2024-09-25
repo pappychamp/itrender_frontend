@@ -8,6 +8,7 @@ const apiClient = axios.create({
     // 'X-Requested-With': 'XMLHttpRequest',
     // Authorization: 'Bearer token', // 必要に応じてトークンを設定
   },
+  paramsSerializer: { indexes: null },
 });
 
 // apiClient.interceptors.request.use((config) => {

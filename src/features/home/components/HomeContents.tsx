@@ -1,32 +1,34 @@
 import classes from '../styles/HomeContents.module.css';
 import { Box, Text } from '@mantine/core';
 import CarouselContent from './HomeContents/CarouselContent.tsx';
-import replaceText from '../utils/format/replaceText.ts';
-import { SiteData, SiteItem, SiteKey } from '../../../types/trendData.ts';
+import replaceText from '../../../utils/format/replaceText.ts';
+import { SiteData, SiteKey } from '../../../types/trendData.ts';
 import LoadingCircle from '../../../components/atoms/LoadingCircle.tsx';
 import CustomAlert from '../../../components/atoms/CustomAlert.tsx';
 import { IconCircleX } from '@tabler/icons-react';
 
 type props = {
-  data: SiteData | null;
+  data: SiteData;
   loading: boolean;
   error: Error | null;
 };
 
 const HomeContents = ({ data, loading, error }: props) => {
+  // ローディング画面
   if (loading) return <LoadingCircle />;
-  if (error || !data)
+  // エラー画面
+  if (error)
     return (
       <CustomAlert
         icon={<IconCircleX />}
         title="エラー"
-        message={error ? error.message : 'データがありません'}
+        message={error.message}
         color="red"
       />
     );
   return (
     <>
-      {Object.entries(data).map(([key, value]: [string, SiteItem[]], index) => {
+      {Object.entries(data).map(([key, value], index) => {
         const siteKey = key as SiteKey;
         return (
           <Box key={index} className={`${classes['main-box']}`}>

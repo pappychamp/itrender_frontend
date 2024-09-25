@@ -27,9 +27,9 @@ const SiteForm = ({ siteOptions }: props) => {
     <>
       <Select
         label="サイト"
-        placeholder="Pick value"
+        placeholder="サイト選択"
         data={siteOptions}
-        size="md"
+        size="lg"
         value={state.site ? state.site : null}
         onChange={handleSelectChange}
       />

@@ -3,6 +3,8 @@ import Trend from '../features/archive/Trend.tsx';
 import { Route, Routes } from 'react-router-dom';
 import { TrendProvider } from '../features/archive/context/TrendContext.tsx';
 import Layout from '../components/layout/Layout.tsx';
+import Search from '../features/search/Search.tsx';
+import { FilterWordsProvider } from '../features/search/context/FilterWordsContext.tsx';
 
 const AppRoutes = () => {
   return (
@@ -23,6 +25,16 @@ const AppRoutes = () => {
               <Trend />
             </Layout>
           </TrendProvider>
+        }
+      />
+      <Route
+        path="/search"
+        element={
+          <FilterWordsProvider>
+            <Layout>
+              <Search />
+            </Layout>
+          </FilterWordsProvider>
         }
       />
     </Routes>

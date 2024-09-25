@@ -18,9 +18,9 @@ const DateForm = ({ date }: props) => {
     <>
       <Select
         label="日付"
-        placeholder="Pick value"
+        placeholder="日付選択"
         data={date}
-        size="md"
+        size="lg"
         value={state.date ? state.date : null}
         onChange={handleSelectChange}
       />
