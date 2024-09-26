@@ -1,7 +1,7 @@
 import { Container } from '@mantine/core';
 import TrendSearchForm from './components/TrendSearchForm.tsx';
 import TrendContents from './components/TrendContents.tsx';
-import { useTrend } from './context/TrendContext.tsx';
+import { useTrend } from './hooks/useTrend.ts';
 import classes from './styles/Trend.module.css';
 import { useSiteTrendData } from './hooks/useSiteTrendData.tsx';
 

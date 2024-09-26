@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer, ReactNode } from 'react';
+import React, { createContext, useReducer, ReactNode } from 'react';
 import { Action, reducer, initialState } from './FilterWordsReducer';
 
 // コンテキストの型定義
@@ -25,12 +25,4 @@ const FilterWordsProvider: React.FC<{ children: ReactNode }> = ({
   );
 };
 
-// コンテキストのカスタムフック
-const useFilterWords = () => {
-  const context = useContext(FilterWordsContext);
-  if (!context) {
-    throw new Error('useFilterWords must be used within a FilterWordsProvider');
-  }
-  return context;
-};
-export { FilterWordsProvider, useFilterWords };
+export { FilterWordsProvider, FilterWordsContext };

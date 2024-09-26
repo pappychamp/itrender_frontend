@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer, ReactNode } from 'react';
+import React, { createContext, useReducer, ReactNode } from 'react';
 import { State, Action, reducer, initialState } from './TrendReducer';
 
 // コンテキストの型定義
@@ -21,12 +21,4 @@ const TrendProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   );
 };
 
-// コンテキストのカスタムフック
-const useTrend = () => {
-  const context = useContext(TrendContext);
-  if (!context) {
-    throw new Error('useTrend must be used within a TrendProvider');
-  }
-  return context;
-};
-export { TrendProvider, useTrend };
+export { TrendProvider, TrendContext };
