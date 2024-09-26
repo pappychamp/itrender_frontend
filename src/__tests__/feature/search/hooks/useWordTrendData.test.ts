@@ -1,6 +1,6 @@
-import * as hook from '../../../../features/search/hooks/useWordTrendData';
-import * as fetchApi from '../../../../features/search/api/getFilterWordData';
-import { ApiData } from '../../../../features/search/types/api';
+import * as hook from '@/src/features/search/hooks/useWordTrendData';
+import * as fetchApi from '@/src/features/search/api/getFilterWordData';
+import { ApiData } from '@/src/features/search/types/api';
 import { renderHook, waitFor } from '@testing-library/react';
 
 describe('useWordTrendDataテスト', () => {

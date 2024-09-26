@@ -1,4 +1,4 @@
-import apiClient from '../../../api/apiClient';
+import apiClient from '@/src/api/apiClient';
 import { ApiData } from '../types/api';
 
 const getFilterWordData = async (

@@ -1,14 +1,14 @@
-import { SiteItem } from '../../../types/trendData';
-import CustomAlert from '../../../components/atoms/CustomAlert';
+import { SiteItem } from '@/src/types/trendData';
+import CustomAlert from '@/src/components/atoms/CustomAlert';
 import {
   IconCircleX,
   IconInfoCircle,
   IconCircleCheck,
 } from '@tabler/icons-react';
-import LoadingCircle from '../../../components/atoms/LoadingCircle';
-import CardContent from '../../../components/organisms/CardContent';
+import LoadingCircle from '@/src/components/atoms/LoadingCircle';
+import CardContent from '@/src/components/organisms/CardContent';
 import { Grid } from '@mantine/core';
-import theme from '../../../constants/theme';
+import theme from '@/src/constants/theme';
 import { useMediaQuery } from '@mantine/hooks';
 
 type props = {

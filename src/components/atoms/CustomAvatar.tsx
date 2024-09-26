@@ -1,5 +1,5 @@
 import { Avatar } from '@mantine/core';
-import classes from '../../styles/CustomAvatar.module.css';
+import classes from '@/src/styles/CustomAvatar.module.css';
 type props = {
   name: string;
 };

@@ -1,5 +1,5 @@
 import { Loader } from '@mantine/core';
-import classes from '../../styles/LoadingCircle.module.css';
+import classes from '@/src/styles/LoadingCircle.module.css';
 
 const LoadingCircle = () => {
   return (

@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
-import CustomAvatar from '../../../components/atoms/CustomAvatar';
+import CustomAvatar from '@/src/components/atoms/CustomAvatar';
 import { render } from '../../test-utils/render';
-import classes from '../../../styles/CustomAvatar.module.css';
+import classes from '@/src/styles/CustomAvatar.module.css';
 
 describe('CustomAvatar コンポーネントのテスト', () => {
   it('nameプロパティが1のとき正しくレンダリングされること', () => {

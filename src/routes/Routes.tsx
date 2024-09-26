@@ -1,10 +1,10 @@
-import Home from '../features/home/Home.tsx';
-import Trend from '../features/archive/Trend.tsx';
+import Home from '@/src/features/home/Home.tsx';
+import Trend from '@/src/features/archive/Trend.tsx';
 import { Route, Routes } from 'react-router-dom';
-import { TrendProvider } from '../features/archive/context/TrendContext.tsx';
-import Layout from '../components/layout/Layout.tsx';
-import Search from '../features/search/Search.tsx';
-import { FilterWordsProvider } from '../features/search/context/FilterWordsContext.tsx';
+import { TrendProvider } from '@/src/features/archive/context/TrendContext.tsx';
+import Layout from '@/src/components/layout/Layout.tsx';
+import Search from '@/src/features/search/Search.tsx';
+import { FilterWordsProvider } from '@/src/features/search/context/FilterWordsContext.tsx';
 
 const AppRoutes = () => {
   return (

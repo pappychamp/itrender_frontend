@@ -1,8 +1,8 @@
 import { Card, Text, Image, Box } from '@mantine/core';
 import CustomAvatar from '../atoms/CustomAvatar';
-import classes from '../../styles/CardContent.module.css';
-import { SiteItem } from '../../types/trendData';
-import noImage from '../../assets/noimage.png';
+import classes from '@/src/styles/CardContent.module.css';
+import { SiteItem } from '@/src/types/trendData';
+import noImage from '@/src/assets/noimage.png';
 import TagContent from '../molecules/TagContent';
 
 type props = {

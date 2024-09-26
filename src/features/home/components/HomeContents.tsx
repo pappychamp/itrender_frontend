@@ -1,10 +1,10 @@
 import classes from '../styles/HomeContents.module.css';
 import { Box, Text } from '@mantine/core';
 import CarouselContent from './HomeContents/CarouselContent.tsx';
-import replaceText from '../../../utils/format/replaceText.ts';
-import { SiteData, SiteKey } from '../../../types/trendData.ts';
-import LoadingCircle from '../../../components/atoms/LoadingCircle.tsx';
-import CustomAlert from '../../../components/atoms/CustomAlert.tsx';
+import replaceText from '@/src/utils/format/replaceText.ts';
+import { SiteData, SiteKey } from '@/src/types/trendData.ts';
+import LoadingCircle from '@/src/components/atoms/LoadingCircle.tsx';
+import CustomAlert from '@/src/components/atoms/CustomAlert.tsx';
 import { IconCircleX } from '@tabler/icons-react';
 
 type props = {

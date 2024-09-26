@@ -1,4 +1,4 @@
-import { SiteItem } from '../../../types/trendData';
+import { SiteItem } from '@/src/types/trendData';
 
 type ApiData = {
   items: SiteItem[];

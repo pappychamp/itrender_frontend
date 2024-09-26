@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import CardContent from '../../../components/organisms/CardContent';
+import CardContent from '@/src/components/organisms/CardContent';
 import { render } from '../../test-utils/render';
 import { siteItemData } from '../../common/testData';
 

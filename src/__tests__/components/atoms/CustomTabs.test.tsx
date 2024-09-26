@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import { render } from '../../test-utils/render';
 import { BrowserRouter as Router } from 'react-router-dom'; // リンクのためにラップ
-import CustomTabs from '../../../components/atoms/CustomTabs';
+import CustomTabs from '@/src/components/atoms/CustomTabs';
 
 const tabs = [
   { name: 'Home', path: '/' },

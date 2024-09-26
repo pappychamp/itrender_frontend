@@ -1,9 +1,9 @@
 import { Carousel } from '@mantine/carousel';
 import classes from '../../styles/CarouselContent.module.css';
-import { SiteItem } from '../../../../types/trendData.ts';
-import theme from '../../../../constants/theme.ts';
+import { SiteItem } from '@/src/types/trendData.ts';
+import theme from '@/src/constants/theme.ts';
 import { useMediaQuery } from '@mantine/hooks';
-import CardContent from '../../../../components/organisms/CardContent.tsx';
+import CardContent from '@/src/components/organisms/CardContent.tsx';
 import { IconChevronRight, IconChevronLeft } from '@tabler/icons-react';
 
 type props = {

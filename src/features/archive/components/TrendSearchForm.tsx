@@ -4,7 +4,7 @@ import SiteForm from './TrendSearchForm/SiteForm.tsx';
 import classes from '../styles/TrendSearchForm.module.css';
 import { useEffect, useState } from 'react';
 import { getPastDates } from '../utils/date/dateFormatter.ts';
-import { siteOptions } from '../../../constants/selectOptions';
+import { siteOptions } from '@/src/constants/selectOptions';
 
 const TrendSearchForm = () => {
   const [date, setDate] = useState<string[] | null>(null);

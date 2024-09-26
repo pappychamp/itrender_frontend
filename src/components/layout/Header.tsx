@@ -1,11 +1,11 @@
 import { Container, Group, Image, Text } from '@mantine/core';
-import classes from '../../styles/Header.module.css';
+import classes from '@/src/styles/Header.module.css';
 import CustomTabs from '../atoms/CustomTabs';
 // import BurgerDrawer from '../molecules/BurgerDrawer';
-import logoImage from '../../assets/logo.png';
+import logoImage from '@/src/assets/logo.png';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { headerTabs } from '../../constants/layout';
+import { headerTabs } from '@/src/constants/layout';
 
 const Header = () => {
   const [active, setActive] = useState(0);

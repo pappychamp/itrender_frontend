@@ -1,4 +1,4 @@
-import { SiteData, SiteItem, SiteKey } from '../../../../types/trendData';
+import { SiteData, SiteItem, SiteKey } from '@/src/types/trendData';
 
 // home画面で上から表示したい順番
 const trendDataFormat = (data: SiteData) => {

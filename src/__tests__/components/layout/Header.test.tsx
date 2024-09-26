@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import Header from '../../../components/layout/Header';
+import Header from '@/src/components/layout/Header';
 import { render } from '../../test-utils/render';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 

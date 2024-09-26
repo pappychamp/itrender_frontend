@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import CustomAlert from '../../../components/atoms/CustomAlert';
+import CustomAlert from '@/src/components/atoms/CustomAlert';
 import { IconCircleX } from '@tabler/icons-react';
 import { render } from '../../test-utils/render';
 

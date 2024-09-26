@@ -1,5 +1,5 @@
-import apiClient from '../../../api/apiClient';
-import { SiteItem } from '../../../types/trendData';
+import apiClient from '@/src/api/apiClient';
+import { SiteItem } from '@/src/types/trendData';
 
 const getSiteTrendData = async (
   site: string,
