@@ -1,6 +1,6 @@
-import { Tag } from '../../types/trendData';
+import { Tag } from '@/src/types/trendData';
 import { Text, HoverCard, ScrollArea } from '@mantine/core';
-import classes from '../../styles/TagContent.module.css';
+import classes from '@/src/styles/TagContent.module.css';
 
 type props = {
   tags: Tag[];

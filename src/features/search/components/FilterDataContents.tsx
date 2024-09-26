@@ -4,7 +4,7 @@ import {
   IconInfoCircle,
   IconCircleCheck,
 } from '@tabler/icons-react';
-import LoadingCircle from '../../../components/atoms/LoadingCircle';
+import LoadingCircle from '@/src/components/atoms/LoadingCircle';
 import Content from './FilterDataContents/Content';
 import { useFilterWords } from '../context/FilterWordsContext';
 import { ApiData } from '../types/api';

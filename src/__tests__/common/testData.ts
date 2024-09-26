@@ -1,4 +1,4 @@
-import { SiteKey } from '../../types/trendData';
+import { SiteKey } from '@/src/types/trendData';
 
 const siteItemData = {
   title: 'test',

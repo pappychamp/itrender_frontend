@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import AppRoutes from '../../routes/Routes';
+import AppRoutes from '@/src/routes/Routes';
 import { render } from '../test-utils/render';
 
 describe('AppRoutes コンポーネントのテスト', () => {

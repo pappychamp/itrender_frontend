@@ -1,7 +1,7 @@
-import * as hook from '../../../../features/home/hooks/useLatestTrendData';
-import * as fetchApi from '../../../../features/home/api/getLatestTrendData';
+import * as hook from '@/src/features/home/hooks/useLatestTrendData';
+import * as fetchApi from '@/src/features/home/api/getLatestTrendData';
 import { renderHook, waitFor } from '@testing-library/react';
-import { ApiData } from '../../../../features/home/types/api';
+import { ApiData } from '@/src/features/home/types/api';
 
 describe('useLatestTrendDataテスト', () => {
   const mockDate = '2024-01-01';

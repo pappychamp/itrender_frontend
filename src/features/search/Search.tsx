@@ -6,7 +6,7 @@ import { useFilterWords } from './context/FilterWordsContext.tsx';
 import FilterDataContents from './components/FilterDataContents.tsx';
 import { useState } from 'react';
 import { useMediaQuery } from '@mantine/hooks';
-import theme from '../../constants/theme.ts';
+import theme from '@/src/constants/theme.ts';
 
 const Search = () => {
   const { state } = useFilterWords();

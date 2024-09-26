@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { TextInput, Group, rem } from '@mantine/core';
 import { IconX, IconSearch } from '@tabler/icons-react';
 import classes from '../styles/WordSearchForm.module.css';
-import CustomBadge from '../../../components/atoms/CustomBadge';
-import CustomButton from '../../../components/atoms/CustomButton';
+import CustomBadge from '@/src/components/atoms/CustomBadge';
+import CustomButton from '@/src/components/atoms/CustomButton';
 import { useFilterWords } from '../context/FilterWordsContext';
 import { validateInput } from '../utils/validation/validation';
 

@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import CusotmButton from '../../../components/atoms/CustomButton.tsx';
+import CusotmButton from '@/src/components/atoms/CustomButton.tsx';
 import { render } from '../../test-utils/render';
 
 describe('CusotmButton コンポーネントのテスト', () => {

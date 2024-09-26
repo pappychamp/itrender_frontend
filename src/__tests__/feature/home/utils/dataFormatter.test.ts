@@ -1,5 +1,5 @@
-import { trendDataFormat } from '../../../../features/home/utils/format/dataFormatter';
-import { SiteData } from '../../../../types/trendData';
+import { trendDataFormat } from '@/src/features/home/utils/format/dataFormatter';
+import { SiteData } from '@/src/types/trendData';
 import { siteItemData } from '../../../common/testData';
 
 describe('trendDataFormat 関数のテスト', () => {

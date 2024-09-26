@@ -1,6 +1,6 @@
 import { Grid } from '@mantine/core';
-import CardContent from '../../../../components/organisms/CardContent';
-import { SiteItem } from '../../../../types/trendData';
+import CardContent from '@/src/components/organisms/CardContent';
+import { SiteItem } from '@/src/types/trendData';
 
 type props = {
   data: SiteItem[];

@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import TagContent from '../../../components/molecules/TagContent';
+import TagContent from '@/src/components/molecules/TagContent';
 import { render } from '../../test-utils/render';
 
 describe('TagContent コンポーネントのテスト', () => {

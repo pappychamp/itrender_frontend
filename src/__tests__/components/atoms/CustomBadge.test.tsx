@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import CustomBadge from '../../../components/atoms/CustomBadge';
+import CustomBadge from '@/src/components/atoms/CustomBadge';
 import { render } from '../../test-utils/render';
 import userEvent from '@testing-library/user-event';
 
