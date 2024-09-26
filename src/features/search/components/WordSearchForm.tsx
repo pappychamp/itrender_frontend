@@ -39,12 +39,14 @@ const WordSearchForm = ({ setMessage, mobile }: props) => {
     } else {
       setMessage('');
       dispatch({ type: 'ADD_WORD', payload: inputValue.trim() });
+      dispatch({ type: 'SET_PAGE', payload: 1 });
       setInputValue('');
     }
   };
   const handleRemoveBadge = (filterWord: string) => {
     setMessage('');
     dispatch({ type: 'REMOVE_WORD', payload: filterWord });
+    dispatch({ type: 'SET_PAGE', payload: 1 });
   };
 
   return (
