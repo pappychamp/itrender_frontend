@@ -1,5 +1,5 @@
 import { Pagination } from '@mantine/core';
-import { useFilterWords } from '../../context/FilterWordsContext';
+import { useFilterWords } from '../../hooks/useFilterWords.ts';
 type props = {
   activePage: number;
   totalPage: number;

@@ -4,7 +4,7 @@ import { IconX, IconSearch } from '@tabler/icons-react';
 import classes from '../styles/WordSearchForm.module.css';
 import CustomBadge from '@/src/components/atoms/CustomBadge';
 import CustomButton from '@/src/components/atoms/CustomButton';
-import { useFilterWords } from '../context/FilterWordsContext';
+import { useFilterWords } from '../hooks/useFilterWords.ts';
 import { validateInput } from '../utils/validation/validation';
 
 type props = {

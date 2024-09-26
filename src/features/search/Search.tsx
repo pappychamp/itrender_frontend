@@ -2,7 +2,7 @@ import { Container } from '@mantine/core';
 import WordSearchForm from './components/WordSearchForm.tsx';
 import classes from './styles/Search.module.css';
 import { useWordTrendData } from './hooks/useWordTrendData.tsx';
-import { useFilterWords } from './context/FilterWordsContext.tsx';
+import { useFilterWords } from './hooks/useFilterWords.ts';
 import FilterDataContents from './components/FilterDataContents.tsx';
 import { useState } from 'react';
 import { useMediaQuery } from '@mantine/hooks';

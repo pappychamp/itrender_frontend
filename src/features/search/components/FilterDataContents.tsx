@@ -6,7 +6,7 @@ import {
 } from '@tabler/icons-react';
 import LoadingCircle from '@/src/components/atoms/LoadingCircle';
 import Content from './FilterDataContents/Content';
-import { useFilterWords } from '../context/FilterWordsContext';
+import { useFilterWords } from '../hooks/useFilterWords.ts';
 import { ApiData } from '../types/api';
 import CustomPagination from './FilterDataContents/CustomPagination';
 import classes from '../styles/FilterDataContents.module.css';

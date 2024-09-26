@@ -1,5 +1,5 @@
 import { Select } from '@mantine/core';
-import { useTrend } from '../../context/TrendContext';
+import { useTrend } from '../../hooks/useTrend';
 
 type props = {
   date: string[];
