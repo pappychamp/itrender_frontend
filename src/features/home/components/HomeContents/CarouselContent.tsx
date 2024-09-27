@@ -38,10 +38,11 @@ const CarouselContent = ({ data }: props) => {
           control: `${classes['carousel-control']}`, // カスタムクラスを適用
           viewport: `${classes['carousel-viewport']}`, // カスタムクラスを適用
         }}
+        data-testid="carousel"
       >
         {data.slice(0, 10).map((item, index) => {
           return (
-            <Carousel.Slide key={index}>
+            <Carousel.Slide key={index} data-testid="carousel-slide">
               <CardContent data={item} mobile={mobile} />
             </Carousel.Slide>
           );

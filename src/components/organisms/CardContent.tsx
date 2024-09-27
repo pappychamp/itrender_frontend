@@ -14,7 +14,13 @@ type props = {
 const CardContent = ({ data, mobile, isRanking = true }: props) => {
   const { title, url, ranking, image_url, tags } = data;
   return (
-    <Card shadow="sm" radius="md" withBorder className={classes.card}>
+    <Card
+      shadow="sm"
+      radius="md"
+      withBorder
+      className={classes.card}
+      data-testid="card-content"
+    >
       <Box className={`${classes['head-box']}`}>
         {isRanking ? <CustomAvatar name={String(ranking)} /> : <></>}
         {tags.length === 0 ? (

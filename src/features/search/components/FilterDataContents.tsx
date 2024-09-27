@@ -32,23 +32,23 @@ const FilterDataContents = ({
 
   // ローディング画面
   if (loading) return <LoadingCircle />;
-  // 初期画面
-  if (!hasSearched && !data)
-    return (
-      <CustomAlert
-        icon={<IconCircleCheck />}
-        message="記事,タグ,サイト名から検索します。"
-        color="green"
-      />
-    );
   // エラー画面
-  if (error || !data)
+  if (error)
     return (
       <CustomAlert
         icon={<IconCircleX />}
         title="エラー"
         message={error ? error.message : 'エラーが起こりました'}
         color="red"
+      />
+    );
+  // 初期画面
+  if (!hasSearched || !data)
+    return (
+      <CustomAlert
+        icon={<IconCircleCheck />}
+        message="記事,タグ,サイト名から検索します。"
+        color="green"
       />
     );
   // 検索したがデータが無いときの画面

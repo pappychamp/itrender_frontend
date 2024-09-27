@@ -23,6 +23,7 @@ const DateForm = ({ date }: props) => {
         size="lg"
         value={state.date ? state.date : null}
         onChange={handleSelectChange}
+        data-testid="date-select"
       />
     </>
   );

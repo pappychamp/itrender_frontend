@@ -20,6 +20,18 @@ type props = {
 const TrendContents = ({ items, hasSearched, loading, error }: props) => {
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
 
+  // ローディング画面
+  if (loading) return <LoadingCircle />;
+  // エラー画面
+  if (error)
+    return (
+      <CustomAlert
+        icon={<IconCircleX />}
+        title="エラー"
+        message={error.message}
+        color="red"
+      />
+    );
   // 初期画面
   if (!hasSearched)
     return (
@@ -29,8 +41,6 @@ const TrendContents = ({ items, hasSearched, loading, error }: props) => {
         color="green"
       />
     );
-  // ローディング画面
-  if (loading) return <LoadingCircle />;
   // 検索したがデータが無いときの画面
   if (hasSearched && !items.length)
     return (
@@ -38,16 +48,6 @@ const TrendContents = ({ items, hasSearched, loading, error }: props) => {
         icon={<IconInfoCircle />}
         message="一致するものが見つかりませんでした"
         color="orange"
-      />
-    );
-  // エラー画面
-  if (error)
-    return (
-      <CustomAlert
-        icon={<IconCircleX />}
-        title="エラー"
-        message={error.message}
-        color="red"
       />
     );
   return (
