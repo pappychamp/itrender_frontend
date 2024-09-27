@@ -32,6 +32,7 @@ const CustomBadge = ({
       color={color}
       onClick={onClick}
       size={size}
+      data-testid="custom-badge"
     >
       {name}
     </Badge>

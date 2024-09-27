@@ -32,7 +32,7 @@ const HomeContents = ({ data, loading, error }: props) => {
         const siteKey = key as SiteKey;
         return (
           <Box key={index} className={`${classes['main-box']}`}>
-            <Text className={`${classes['site-text']}`}>
+            <Text className={`${classes['site-text']}`} data-testid="site-name">
               {replaceText(siteKey)}
             </Text>
             <CarouselContent data={value} />
