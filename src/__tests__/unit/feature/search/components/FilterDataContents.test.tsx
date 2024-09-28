@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import FilterDataContents from '@/src/features/search/components/FilterDataContents';
 import { render } from '../../../test-utils/render';
-import { siteItemData } from '@/src/__tests__/common/testData';
+import { siteItemData } from '@/src/__tests__/unit/common/testData';
 import { FilterWordsProvider } from '@/src/features/search/context/FilterWordsContext.tsx';
 import { ApiData } from '@/src/features/search/types/api';
 

@@ -1,4 +1,4 @@
-import { siteItemData } from '@/src/__tests__/common/testData';
+import { siteItemData } from '@/src/__tests__/unit/common/testData';
 import HomeContents from '@/src/features/home/components/HomeContents';
 import { SiteData } from '@/src/types/trendData';
 import { render } from '../../../test-utils/render';
