@@ -21,5 +21,7 @@ export default defineConfig({
     },
     // テストの前に実行されるセットアップファイル
     setupFiles: './vitest.setup.ts',
+    // unitテストのみ実行
+    include: ['src/__tests__/unit/**/*.test.{ts,tsx}'],
   },
 });
