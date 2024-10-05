@@ -1,4 +1,4 @@
-name: Vitest
+name: Test
 
 on:
   pull_request:
@@ -6,9 +6,8 @@ on:
       - main
 
 jobs:
-  pytest_coverage:
+  vitest_coverage:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
