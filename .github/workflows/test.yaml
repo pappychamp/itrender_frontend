@@ -31,6 +31,3 @@ jobs:
       - name: Run vitest
         run: |
           npm run test:coverage
-
-      - name: Show coverage
-        uses: davelosert/vitest-coverage-report-action@v2
