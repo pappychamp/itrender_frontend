@@ -18,6 +18,8 @@ export default defineConfig({
     environment: 'happy-dom',
     coverage: {
       provider: 'v8',
+      include: ['src/**/*.{ts,tsx}'],
+      reporter: ['text', 'json', 'json-summary'],
     },
     // テストの前に実行されるセットアップファイル
     setupFiles: './vitest.setup.ts',
