@@ -100,7 +100,11 @@ describe('FilterDataContents コンポーネントのテスト', () => {
 
     // エラーメッセージが表示されていることを確認
     expect(screen.getByText('エラー')).toBeInTheDocument();
-    expect(screen.getByText(mockError.message)).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        'サーバー内部エラーが発生しました。後ほど再度お試しください。',
+      ),
+    ).toBeInTheDocument();
   });
 
   it('データが存在する場合の表示', () => {

@@ -22,7 +22,7 @@ const HomeContents = ({ data, loading, error }: props) => {
       <CustomAlert
         icon={<IconCircleX />}
         title="エラー"
-        message={error.message}
+        message="サーバー内部エラーが発生しました。後ほど再度お試しください。"
         color="red"
       />
     );
