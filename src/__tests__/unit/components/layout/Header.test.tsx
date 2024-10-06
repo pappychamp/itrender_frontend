@@ -16,8 +16,8 @@ describe('Header コンポーネントのテスト', () => {
   };
   it('ロゴとタイトルとタブが正しく表示されること', () => {
     renderWithRouter('/');
-    expect(screen.getByText('Trender')).toBeInTheDocument();
-    expect(screen.getByAltText('Trender logo')).toHaveAttribute(
+    expect(screen.getByText('ITrender')).toBeInTheDocument();
+    expect(screen.getByAltText('ITrender logo')).toHaveAttribute(
       'src',
       '/src/assets/logo.png',
     );

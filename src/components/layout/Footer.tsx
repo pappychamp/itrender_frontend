@@ -1,5 +1,6 @@
 import { Anchor, Group } from '@mantine/core';
 import classes from '@/src/styles/Footer.module.css';
+import { SITE_NAME } from '@/src/constants/config';
 
 const links = [
   { link: '#', label: 'このサイトについて' },
@@ -26,7 +27,7 @@ const Footer = () => {
         <Group className={classes.links}>{items}</Group>
       </div>
       <div className={classes.copyright}>
-        &copy; {currentYear} Trender All rights reserved.
+        &copy; {currentYear} {SITE_NAME} All rights reserved.
       </div>
     </div>
   );

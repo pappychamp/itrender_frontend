@@ -6,6 +6,7 @@ import logoImage from '@/src/assets/logo.png';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { headerTabs } from '@/src/constants/layout';
+import { SITE_NAME } from '@/src/constants/config';
 
 const Header = () => {
   const [active, setActive] = useState(0);
@@ -27,9 +28,9 @@ const Header = () => {
         <Image
           src={logoImage}
           className={`${classes['content-logo']}`}
-          alt="Trender logo"
+          alt="ITrender logo"
         />
-        <Text className={`${classes['content-title']}`}>Trender</Text>
+        <Text className={`${classes['content-title']}`}>{SITE_NAME}</Text>
       </Container>
       <Group>
         {/* <BurgerDrawer /> */}
