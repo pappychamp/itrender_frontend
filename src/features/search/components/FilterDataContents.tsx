@@ -38,7 +38,7 @@ const FilterDataContents = ({
       <CustomAlert
         icon={<IconCircleX />}
         title="エラー"
-        message={error ? error.message : 'エラーが起こりました'}
+        message="サーバー内部エラーが発生しました。後ほど再度お試しください。"
         color="red"
       />
     );
