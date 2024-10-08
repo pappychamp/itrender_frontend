@@ -2,6 +2,7 @@ import * as hook from '@/src/features/home/hooks/useLatestTrendData';
 import * as fetchApi from '@/src/features/home/api/getLatestTrendData';
 import { renderHook, waitFor } from '@testing-library/react';
 import { ApiData } from '@/src/features/home/types/api';
+import * as Sentry from '@sentry/react';
 
 describe('useLatestTrendDataテスト', () => {
   const mockDate = '2024-01-01';
@@ -60,6 +61,10 @@ describe('useLatestTrendDataテスト', () => {
   it('異常系: データ取得に失敗する場合', async () => {
     const mockError = new Error('API fetch failed');
     spy.mockRejectedValue(mockError); // エラーを投げる
+    // Sentry.captureExceptionをモック化
+    vi.mock('@sentry/react', () => ({
+      captureException: vi.fn(),
+    }));
 
     const { result } = renderHook(() => hook.useLatestTrendData());
     expect(result.current.latestTrendData).toEqual({});
@@ -72,6 +77,8 @@ describe('useLatestTrendDataテスト', () => {
       expect(result.current.loading).toBe(false);
       expect(result.current.error).toEqual(mockError);
       expect(spy).toHaveBeenCalledTimes(1);
+      expect(Sentry.captureException).toHaveBeenCalledTimes(1);
+      expect(Sentry.captureException).toHaveBeenCalledWith(mockError);
     });
   });
 });

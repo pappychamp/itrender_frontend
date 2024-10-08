@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
   await page.goto('http://localhost:5173/');
-  await page.getByRole('link', { name: 'Archive' }).click();
+  await page.getByRole('link', { name: 'アーカイブ' }).click();
   //   レンダリング検証
   await expect(page.getByText('サイト', { exact: true })).toBeVisible();
   await expect(page.getByPlaceholder('サイト選択')).toBeVisible();

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getFilterWordData } from '../api/getFilterWordData';
 import { ApiData } from '../types/api';
+import * as Sentry from '@sentry/react';
 
 const useWordTrendData = (filterWords: string[], page: number) => {
   const [filterData, setFilterData] = useState<ApiData | null>(null);
@@ -26,7 +27,7 @@ const useWordTrendData = (filterWords: string[], page: number) => {
       } catch (error) {
         setError(error as Error);
         setFilterData(null);
-        console.log(error);
+        Sentry.captureException(error);
       } finally {
         setLoading(false);
       }

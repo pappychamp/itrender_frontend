@@ -21,21 +21,25 @@ describe('Header コンポーネントのテスト', () => {
       'src',
       '/src/assets/logo.png',
     );
-    expect(screen.getByText('Home')).toBeInTheDocument();
-    expect(screen.getByText('Archive')).toBeInTheDocument();
+    expect(screen.getByText('ホーム')).toBeInTheDocument();
+    expect(screen.getByText('アーカイブ')).toBeInTheDocument();
+    expect(screen.getByText('調べる')).toBeInTheDocument();
   });
 
   it('パスに基づいてアクティブなタブが変更されること', async () => {
     renderWithRouter('/');
-    const homeTab = screen.getByText('Home');
+    const homeTab = screen.getByText('ホーム');
     expect(homeTab).toHaveAttribute('data-active', 'true');
-    const archiveTab = screen.getByText('Archive');
+    const archiveTab = screen.getByText('アーカイブ');
     expect(archiveTab).not.toHaveAttribute('data-active');
 
     // Tab のクリックをトリガー
     await userEvent.click(archiveTab);
-    expect(screen.getByText('Archive')).toHaveAttribute('data-active', 'true');
-    expect(screen.getByText('Home')).not.toHaveAttribute('data-active');
+    expect(screen.getByText('アーカイブ')).toHaveAttribute(
+      'data-active',
+      'true',
+    );
+    expect(screen.getByText('ホーム')).not.toHaveAttribute('data-active');
     // Tab のクリックをトリガー
     await userEvent.click(homeTab);
     expect(homeTab).toHaveAttribute('data-active', 'true');

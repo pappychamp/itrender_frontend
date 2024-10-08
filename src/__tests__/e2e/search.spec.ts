@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
   await page.goto('http://localhost:5173/');
-  await page.getByRole('link', { name: 'Search' }).click();
+  await page.getByRole('link', { name: '調べる' }).click();
   await expect(page.getByPlaceholder('気になる単語を検索')).toBeVisible();
   await expect(page.getByRole('button', { name: 'Enterで検索' })).toBeVisible();
   await expect(page.getByTestId('custom-badge')).not.toBeVisible();

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { SiteItem, SiteKey } from '@/src/types/trendData';
 import { getSiteTrendData } from '../api/getSiteTrendData';
+import * as Sentry from '@sentry/react';
 
 const useSiteTrendData = (site: SiteKey | '', date: string) => {
   const [trendData, setTrendData] = useState<SiteItem[]>([]);
@@ -26,7 +27,7 @@ const useSiteTrendData = (site: SiteKey | '', date: string) => {
       } catch (error) {
         setError(error as Error);
         setTrendData([]);
-        console.log(error);
+        Sentry.captureException(error);
       } finally {
         setLoading(false);
       }
