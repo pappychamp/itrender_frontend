@@ -5,6 +5,7 @@ import { TrendProvider } from '@/src/features/archive/context/TrendContext.tsx';
 import Layout from '@/src/components/layout/Layout.tsx';
 import Search from '@/src/features/search/Search.tsx';
 import { FilterWordsProvider } from '@/src/features/search/context/FilterWordsContext.tsx';
+import Contact from '@/src/features/contact/Contact';
 
 const AppRoutes = () => {
   return (
@@ -35,6 +36,14 @@ const AppRoutes = () => {
               <Search />
             </Layout>
           </FilterWordsProvider>
+        }
+      />
+      <Route
+        path="/contact"
+        element={
+          <Layout>
+            <Contact />
+          </Layout>
         }
       />
     </Routes>
