@@ -1,10 +1,11 @@
 import { Anchor, Group } from '@mantine/core';
 import classes from '@/src/styles/Footer.module.css';
 import { SITE_NAME } from '@/src/constants/config';
+import { Link } from 'react-router-dom';
 
 const links = [
-  { link: '#', label: 'このサイトについて' },
-  { link: '#', label: 'お問い合わせ' },
+  // { url: '#', label: 'このサイトについて' },
+  { url: '/contact', label: 'お問い合わせ' },
 ];
 
 const Footer = () => {
@@ -12,10 +13,10 @@ const Footer = () => {
   const items = links.map((link) => (
     <Anchor
       c="white"
+      component={Link}
       key={link.label}
-      href={link.link}
+      to={link.url}
       lh={1}
-      onClick={(event) => event.preventDefault()}
       size="lg"
     >
       {link.label}

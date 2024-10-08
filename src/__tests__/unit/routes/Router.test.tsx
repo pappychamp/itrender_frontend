@@ -38,4 +38,12 @@ describe('AppRoutes コンポーネントのテスト', () => {
     const archiveTab = screen.getByText('Search');
     expect(archiveTab).toHaveAttribute('data-active', 'true');
   });
+  it('"/contact" にアクセスしたときに Contact コンポーネントが表示されること', () => {
+    render(
+      <MemoryRouter initialEntries={['/contact']}>
+        <AppRoutes />
+      </MemoryRouter>,
+    );
+    expect(screen.getByTestId('google-form')).toBeInTheDocument();
+  });
 });
