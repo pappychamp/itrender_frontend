@@ -2,6 +2,7 @@ import * as hook from '@/src/features/search/hooks/useWordTrendData';
 import * as fetchApi from '@/src/features/search/api/getFilterWordData';
 import { ApiData } from '@/src/features/search/types/api';
 import { renderHook, waitFor } from '@testing-library/react';
+import * as Sentry from '@sentry/react';
 
 describe('useWordTrendDataテスト', () => {
   const mockFilterWords = ['test'];
@@ -67,6 +68,10 @@ describe('useWordTrendDataテスト', () => {
   it('異常系: データ取得に失敗する場合', async () => {
     const mockError = new Error('API fetch failed');
     spy.mockRejectedValue(mockError); // エラーを投げる
+    // Sentry.captureExceptionをモック化
+    vi.mock('@sentry/react', () => ({
+      captureException: vi.fn(),
+    }));
 
     const { result } = renderHook(() =>
       hook.useWordTrendData(mockFilterWords, mockPage),
@@ -82,6 +87,8 @@ describe('useWordTrendDataテスト', () => {
       expect(result.current.error).toEqual(mockError);
       expect(spy).toHaveBeenCalledTimes(1);
       expect(spy).toHaveBeenCalledWith(mockFilterWords, mockPage);
+      expect(Sentry.captureException).toHaveBeenCalledTimes(1);
+      expect(Sentry.captureException).toHaveBeenCalledWith(mockError);
     });
   });
   it('異常系: 引数filterWordsが空だった場合', async () => {

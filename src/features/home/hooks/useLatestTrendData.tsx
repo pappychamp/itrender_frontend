@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { SiteData } from '@/src/types/trendData';
 import { getLatestTrendData } from '../api/getLatestTrendData';
 import { trendDataFormat } from '../utils/format/dataFormatter';
+import * as Sentry from '@sentry/react';
 
 const useLatestTrendData = () => {
   const [latestTrendData, setLatestTrendData] = useState<SiteData>({});
@@ -23,7 +24,7 @@ const useLatestTrendData = () => {
         setError(error as Error);
         setLatestDate('');
         setLatestTrendData({});
-        console.log(error);
+        Sentry.captureException(error);
       } finally {
         setLoading(false);
       }

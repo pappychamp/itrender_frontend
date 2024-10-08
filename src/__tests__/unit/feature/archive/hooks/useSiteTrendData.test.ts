@@ -2,6 +2,7 @@ import * as hook from '@/src/features/archive/hooks/useSiteTrendData';
 import * as fetchApi from '@/src/features/archive/api/getSiteTrendData';
 import { SiteItem, SiteKey } from '@/src/types/trendData';
 import { renderHook, waitFor } from '@testing-library/react';
+import * as Sentry from '@sentry/react';
 
 describe('useSiteTrendDataテスト', () => {
   const mockSite: SiteKey = 'qiita';
@@ -60,6 +61,10 @@ describe('useSiteTrendDataテスト', () => {
   it('異常系: データ取得に失敗する場合', async () => {
     const mockError = new Error('API fetch failed');
     spy.mockRejectedValue(mockError); // エラーを投げる
+    // Sentry.captureExceptionをモック化
+    vi.mock('@sentry/react', () => ({
+      captureException: vi.fn(),
+    }));
 
     const { result } = renderHook(() =>
       hook.useSiteTrendData(mockSite, mockDate),
@@ -75,6 +80,8 @@ describe('useSiteTrendDataテスト', () => {
       expect(result.current.error).toEqual(mockError);
       expect(spy).toHaveBeenCalledTimes(1);
       expect(spy).toHaveBeenCalledWith(mockSite, mockDate);
+      expect(Sentry.captureException).toHaveBeenCalledTimes(1);
+      expect(Sentry.captureException).toHaveBeenCalledWith(mockError);
     });
   });
   it('異常系: 引数siteが空だった場合', async () => {
