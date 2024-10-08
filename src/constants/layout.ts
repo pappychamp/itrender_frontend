@@ -1,7 +1,7 @@
 const headerTabs = [
-  { name: 'Home', path: '/' },
-  { name: 'Archive', path: '/archive' },
-  { name: 'Search', path: '/search' },
+  { name: 'ホーム', path: '/' },
+  { name: 'アーカイブ', path: '/archive' },
+  { name: '調べる', path: '/search' },
 ];
 
 export { headerTabs };

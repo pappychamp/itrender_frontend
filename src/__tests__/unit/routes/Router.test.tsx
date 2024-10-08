@@ -10,9 +10,9 @@ describe('AppRoutes コンポーネントのテスト', () => {
         <AppRoutes />
       </MemoryRouter>,
     );
-    const homeTab = screen.getByText('Home');
+    const homeTab = screen.getByText('ホーム');
     expect(homeTab).toHaveAttribute('data-active', 'true');
-    const archiveTab = screen.getByText('Archive');
+    const archiveTab = screen.getByText('アーカイブ');
     expect(archiveTab).not.toHaveAttribute('data-active');
   });
 
@@ -22,9 +22,9 @@ describe('AppRoutes コンポーネントのテスト', () => {
         <AppRoutes />
       </MemoryRouter>,
     );
-    const homeTab = screen.getByText('Home');
+    const homeTab = screen.getByText('ホーム');
     expect(homeTab).not.toHaveAttribute('data-active');
-    const archiveTab = screen.getByText('Archive');
+    const archiveTab = screen.getByText('アーカイブ');
     expect(archiveTab).toHaveAttribute('data-active', 'true');
   });
   it('"/search" にアクセスしたときに Search コンポーネントが表示されること', () => {
@@ -33,9 +33,9 @@ describe('AppRoutes コンポーネントのテスト', () => {
         <AppRoutes />
       </MemoryRouter>,
     );
-    const homeTab = screen.getByText('Home');
+    const homeTab = screen.getByText('ホーム');
     expect(homeTab).not.toHaveAttribute('data-active');
-    const archiveTab = screen.getByText('Search');
+    const archiveTab = screen.getByText('調べる');
     expect(archiveTab).toHaveAttribute('data-active', 'true');
   });
   it('"/contact" にアクセスしたときに Contact コンポーネントが表示されること', () => {
