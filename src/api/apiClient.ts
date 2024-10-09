@@ -1,7 +1,7 @@
 import axios from 'axios';
-
+import { API_URL } from '../constants/config';
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL, // APIのベースURL
+  baseURL: API_URL, // APIのベースURL
   //   timeout: 2000, // タイムアウトの設定
   headers: {
     'Content-Type': 'application/json',
