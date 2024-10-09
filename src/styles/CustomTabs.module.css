@@ -1,0 +1,11 @@
+.anchor {
+  color: rgb(95, 99, 104) !important;
+  font-weight: bold !important;
+}
+.anchor:hover {
+  color: rgb(0, 0, 0) !important;
+}
+.anchor[data-active] {
+  border-bottom: solid;
+  border-bottom-color: #4c8df6;
+}
