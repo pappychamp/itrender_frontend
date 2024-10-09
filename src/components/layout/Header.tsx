@@ -1,16 +1,20 @@
-import { Container, Group, Image, Text } from '@mantine/core';
+import { Container, Group, Image } from '@mantine/core';
 import classes from '@/src/styles/Header.module.css';
 import CustomTabs from '../atoms/CustomTabs';
-// import BurgerDrawer from '../molecules/BurgerDrawer';
+import BurgerDrawer from '../molecules/BurgerDrawer';
 import logoImage from '@/src/assets/logo.png';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { headerTabs } from '@/src/constants/layout';
 import { SITE_NAME } from '@/src/constants/config';
+import theme from '@/src/constants/theme';
+import { useMediaQuery } from '@mantine/hooks';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [active, setActive] = useState(0);
   const location = useLocation();
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints?.sm})`);
 
   // 現在のパスを監視し、active 状態を更新する
   useEffect(() => {
@@ -24,18 +28,32 @@ const Header = () => {
 
   return (
     <header className={classes.header}>
-      <Container className={`${classes['image-section']}`}>
-        <Image
-          src={logoImage}
-          className={`${classes['content-logo']}`}
-          alt="ITrender logo"
-        />
-        <Text className={`${classes['content-title']}`}>{SITE_NAME}</Text>
-      </Container>
-      <Group>
-        {/* <BurgerDrawer /> */}
-        <CustomTabs tabs={headerTabs} active={active} />
-      </Group>
+      {mobile ? (
+        <>
+          <BurgerDrawer />
+          <Container className={`${classes['image-section']}`}>
+            <Link to="/" className={`${classes['content-title']}`}>
+              {SITE_NAME}
+            </Link>
+          </Container>
+        </>
+      ) : (
+        <>
+          <Container className={`${classes['image-section']}`}>
+            <Image
+              src={logoImage}
+              className={`${classes['content-logo']}`}
+              alt="ITrender logo"
+            />
+            <Link to="/" className={`${classes['content-title']}`}>
+              {SITE_NAME}
+            </Link>
+          </Container>
+          <Group>
+            <CustomTabs tabs={headerTabs} active={active} />
+          </Group>
+        </>
+      )}
     </header>
   );
 };

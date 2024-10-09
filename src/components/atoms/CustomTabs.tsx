@@ -1,6 +1,6 @@
 import { Anchor } from '@mantine/core';
 import { Link } from 'react-router-dom';
-import classes from '@/src/styles/Header.module.css';
+import classes from '@/src/styles/CustomTabs.module.css';
 
 type tabs = {
   name: string;
