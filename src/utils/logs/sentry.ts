@@ -1,7 +1,6 @@
 import * as Sentry from '@sentry/react';
+import { SENTRY_DSN, ENVIRONMENT } from '@/src/constants/config';
 
-const SENTRY_DSN = import.meta.env.VITE_SENTRY_DSN;
-const ENVIRONMENT: string | undefined = import.meta.env.VITE_ENVIRONMENT;
 const setupSentry = () => {
   if (SENTRY_DSN) {
     Sentry.init({
