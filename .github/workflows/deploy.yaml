@@ -1,0 +1,42 @@
+name: build and S3 deploy
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  AWS_IAM_ROLE_ARN: ${{ secrets.AWS_IAM_ROLE_ARN }}
+  S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+  VITE_API_URL: ${{ secrets.VITE_API_URL }}
+  VITE_SENTRY_DSN: ${{ secrets.VITE_SENTRY_DSN }}
+  VITE_ENVIRONMENT: production
+jobs:
+  push_ecr:
+    runs-on: ubuntu-latest
+    # `permissions` を設定しないと OIDC が使えないので注意
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # AWS 認証
+      - name: aws credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: us-east-1
+          role-to-assume: ${{ env.AWS_IAM_ROLE_ARN }}
+
+      - name: install
+        run: npm install
+      - name: build
+        run: |
+          VITE_API_URL=${{ env.VITE_API_URL }} \
+          VITE_SENTRY_DSN=${{ env.VITE_SENTRY_DSN }} \
+          VITE_ENVIRONMENT=${{ env.VITE_ENVIRONMENT }} \
+          npm run build
+      - name: s3 deploy
+        run: |
+          aws s3 cp --recursive dist s3://${{ env.S3_BUCKET_NAME }}/
