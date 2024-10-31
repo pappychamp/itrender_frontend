@@ -12,8 +12,9 @@ env:
   VITE_SENTRY_DSN: ${{ secrets.VITE_SENTRY_DSN }}
   VITE_ENVIRONMENT: production
 jobs:
-  push_ecr:
+  push_s3:
     runs-on: ubuntu-latest
+    timeout-minutes: 5 # タイムアウト設定したほうがいい
     # `permissions` を設定しないと OIDC が使えないので注意
     permissions:
       id-token: write
