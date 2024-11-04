@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import { MantineProvider } from '@mantine/core';
@@ -11,9 +11,9 @@ import setupSentry from './utils/logs/sentry.ts';
 setupSentry();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <MantineProvider theme={theme}>
-      <App />
-    </MantineProvider>
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <MantineProvider theme={theme}>
+    <App />
+  </MantineProvider>,
+  // </React.StrictMode>,
 );
