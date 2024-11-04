@@ -13,7 +13,7 @@ const Home = () => {
       </Box> */}
       <Container className={`${classes['date-section']}`}>
         <Text className={`${classes['date-text']}`}>
-          最終更新日:{latestDate}
+          最終更新日:{latestDate} 0時
         </Text>
       </Container>
       <Container className={`${classes['contents-section']}`}>
