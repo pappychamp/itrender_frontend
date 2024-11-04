@@ -23,7 +23,7 @@ const CarouselContent = ({ data }: props) => {
         align="start"
         draggable={mobile}
         dragFree
-        slidesToScroll={2}
+        slidesToScroll={mobile ? 1 : 2}
         withControls={!mobile}
         controlSize={40}
         nextControlIcon={
