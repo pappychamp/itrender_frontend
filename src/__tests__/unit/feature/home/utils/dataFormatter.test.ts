@@ -6,11 +6,11 @@ describe('trendDataFormat 関数のテスト', () => {
   const mockProps: SiteData = {
     thinkit: [siteItemData],
     qiita: [siteItemData],
-    yahoo: [siteItemData],
+    youtube: [siteItemData],
   };
   it('データが存在する場合、正しくフォーマットされること', () => {
     const formattedData = trendDataFormat(mockProps);
-    expect(Object.keys(formattedData)).toEqual(['yahoo', 'qiita', 'thinkit']);
+    expect(Object.keys(formattedData)).toEqual(['youtube', 'qiita', 'thinkit']);
   });
   it('データが存在しない場合、空のキーが削除されること', () => {
     const formattedData = trendDataFormat({
@@ -18,6 +18,6 @@ describe('trendDataFormat 関数のテスト', () => {
       qiita: [],
       zenn: undefined,
     });
-    expect(Object.keys(formattedData)).toEqual(['yahoo', 'thinkit']);
+    expect(Object.keys(formattedData)).toEqual(['youtube', 'thinkit']);
   });
 });
