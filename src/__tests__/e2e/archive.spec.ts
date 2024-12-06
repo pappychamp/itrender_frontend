@@ -9,9 +9,9 @@ test('test', async ({ page }) => {
   await expect(page.getByText('日付')).toBeVisible();
   await expect(page.getByPlaceholder('日付選択')).toBeVisible();
   await page.getByPlaceholder('サイト選択').click();
-  await page.getByRole('option', { name: 'Yahoo' }).click();
+  await page.getByRole('option', { name: 'Youtube' }).click();
   //   オプションの選択
   const selectOption = await page.getByPlaceholder('サイト選択').inputValue();
   //   検証
-  expect(selectOption).toBe('Yahoo');
+  expect(selectOption).toBe('Youtube');
 });

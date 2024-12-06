@@ -3,7 +3,7 @@ import { SiteData, SiteItem, SiteKey } from '@/src/types/trendData';
 // home画面で上から表示したい順番
 const trendDataFormat = (data: SiteData) => {
   const formattedData: { [key in SiteKey]: SiteItem[] } = {
-    yahoo: data.yahoo || [],
+    // yahoo: data.yahoo || [],
     youtube: data.youtube || [],
     qiita: data.qiita || [],
     zenn: data.zenn || [],

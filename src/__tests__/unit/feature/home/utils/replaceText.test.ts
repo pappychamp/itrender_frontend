@@ -3,8 +3,8 @@ import { SiteKey } from '@/src/types/trendData';
 
 describe('replaceText 関数のテスト', () => {
   it('該当するサイト名は、正しくフォーマットされること', () => {
-    const replaceYahoo = replaceText('yahoo');
-    expect(replaceYahoo).toEqual('Yahoo');
+    // const replaceYahoo = replaceText('yahoo');
+    // expect(replaceYahoo).toEqual('Yahoo');
     const replaceYoutube = replaceText('youtube');
     expect(replaceYoutube).toEqual('Youtube');
     const replaceQiita = replaceText('qiita');

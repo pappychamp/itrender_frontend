@@ -2,7 +2,7 @@ type SiteFormOption =
   | 'Qiita'
   | 'Youtube'
   | 'Zenn'
-  | 'Yahoo'
+  // | 'Yahoo'
   | 'TechPlus'
   | 'ThinkIT';
 export type { SiteFormOption };

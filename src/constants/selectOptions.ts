@@ -7,7 +7,7 @@ type SiteOptions = {
 };
 
 const siteOptions: SiteOptions[] = [
-  { value: 'yahoo', label: 'Yahoo' },
+  // { value: 'yahoo', label: 'Yahoo' },
   { value: 'youtube', label: 'Youtube' },
   { value: 'qiita', label: 'Qiita' },
   { value: 'zenn', label: 'Zenn' },
